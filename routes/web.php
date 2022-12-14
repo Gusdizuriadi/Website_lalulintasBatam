@@ -38,7 +38,9 @@ Route::controller(LoginController::class)->group(function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['middleware' => ['CekUserLogin:1']], function () {
-        Route::resource('kategori', KategoriController::class);
+        Route::get('kategori', [KategoriController::class, 'index'])->name('kategori');
+        Route::get('/kategori/tambah', [KategoriController::class, 'add']);
+        Route::post('/kategori/insert', [KategoriController::class, 'insert']);
         Route::resource('jenis', JenisController::class);
         Route::resource('artikel', ArtikelController::class);
         Route::resource('profil', ProfilController::class);
