@@ -30,6 +30,7 @@ class LoginController extends Controller
             ],
             [
                 'username.required' => 'username tidak boleh kosong',
+                'password.required' => 'password tidak boleh kosong'
             ]
         );
 
@@ -44,7 +45,7 @@ class LoginController extends Controller
             //    return redirect()->intended('operator');
             //}
             if ($user) {
-                return redirect()->intended('home');
+                return redirect()->intended('home')->with('pesan', 'Login Berhasil');
             }
 
             return redirect()->intended('/');

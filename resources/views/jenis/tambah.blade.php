@@ -29,8 +29,8 @@ Tambah Jenis
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button class="btn btn-primary btn-sm">Simpan</button>
-                            <a href="{{ url('jenis') }}" class=" btn btn-sm btn-secondary">Batal</a>
+                            <button class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan</button>
+                            <a href="{{ url('jenis') }}" class=" btn btn-sm btn-secondary"><i class="fas fa-times-circle"></i> Batal</a>
                         </div>
                     </div>
                 </div>

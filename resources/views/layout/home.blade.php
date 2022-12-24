@@ -19,6 +19,13 @@ Halaman Dashboard
         </div>
     </div>
     <div class="card-body">
+        @if (session('pesan'))
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i>Sukses</h5>
+            {{ session('pesan') }}.
+        </div>
+        @endif
         <div class="alert alert-success">
             Halo, Selamat Datang {{ $user->username }}
         </div>

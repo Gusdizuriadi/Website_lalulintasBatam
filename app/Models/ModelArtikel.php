@@ -27,7 +27,10 @@ class ModelArtikel extends Model
 
     public function addData($data)
     {
-        DB::table('tbl_artikel')->insert($data);
+        return DB::table('tbl_artikel')
+        ->leftJoin('tbl_kategori', 'tbl_kategori.id_kategori', '=', 'tbl_artikel.id_kategori')
+        ->leftJoin('tbl_jenis', 'tbl_jenis.id_jenis', '=', 'tbl_artikel.id_jenis')
+        ->insert($data);
     }
 
     public function deleteData($id_artikel)

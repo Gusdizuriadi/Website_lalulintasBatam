@@ -70,7 +70,7 @@
 <li class="nav-header">DATA PROSES</li>
 <li class="nav-item">
     <a href="{{ url('artikel') }}" class="nav-link">
-        <i class="nav-icon fas fa-book"></i>
+        <i class="nav-icon fas fa-newspaper"></i>
         <p>
             Artikel
         </p>
@@ -79,7 +79,7 @@
 
 <li class="nav-item">
     <a href="{{ url('profil') }}" class="nav-link">
-        <i class="nav-icon fas fa-user"></i>
+        <i class="nav-icon fas fa-landmark"></i>
         <p>
             Profil
         </p>

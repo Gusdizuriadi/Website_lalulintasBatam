@@ -55,6 +55,7 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel');
         Route::get('/artikel/tambah', [ArtikelController::class, 'add']);
+        Route::post('/artikel/insert', [ArtikelController::class, 'insert']);
         Route::get('/artikel/detail/{id_artikel}', [ArtikelController::class, 'detail']);
         Route::get('/artikel/delete/{id_artikel}', [ArtikelController::class, 'delete']);
 
@@ -64,7 +65,13 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     //Route::group(['middleware' => ['CekUserLogin:2']], function () {
-    //    Route::resource('artikel', ArtikelController::class);
-     //   Route::resource('profil', ProfilController::class);
+    //    Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel');
+    //    Route::get('/artikel/tambah', [ArtikelController::class, 'add']);
+    //    Route::post('/artikel/insert', [ArtikelController::class, 'insert']);
+    //    Route::get('/artikel/detail/{id_artikel}', [ArtikelController::class, 'detail']);
+    //    Route::get('/artikel/delete/{id_artikel}', [ArtikelController::class, 'delete']);
+
+        
+    //    Route::resource('profil', ProfilController::class);
     //});
 });
