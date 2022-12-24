@@ -8,6 +8,7 @@ use App\Http\Controllers\JenisController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,13 +42,29 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('kategori', [KategoriController::class, 'index'])->name('kategori');
         Route::get('/kategori/tambah', [KategoriController::class, 'add']);
         Route::post('/kategori/insert', [KategoriController::class, 'insert']);
-        Route::resource('jenis', JenisController::class);
-        Route::resource('artikel', ArtikelController::class);
+        Route::get('/kategori/edit/{id_kategori}', [KategoriController::class, 'edit']);
+        Route::post('/kategori/update/{id_kategori}', [KategoriController::class, 'update']);
+        Route::get('/kategori/delete/{id_kategori}', [KategoriController::class, 'delete']);
+
+        Route::get('jenis', [JenisController::class, 'index'])->name('jenis');
+        Route::get('/jenis/tambah', [JenisController::class, 'add']);
+        Route::post('/jenis/insert', [JenisController::class, 'insert']);
+        Route::get('/jenis/edit/{id_jenis}', [JenisController::class, 'edit']);
+        Route::post('/jenis/update/{id_jenis}', [JenisController::class, 'update']);
+        Route::get('/jenis/delete/{id_jenis}', [JenisController::class, 'delete']);
+
+        Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel');
+        Route::get('/artikel/tambah', [ArtikelController::class, 'add']);
+        Route::get('/artikel/detail/{id_artikel}', [ArtikelController::class, 'detail']);
+        Route::get('/artikel/delete/{id_artikel}', [ArtikelController::class, 'delete']);
+
+
         Route::resource('profil', ProfilController::class);
+        Route::resource('user', UserController::class);
     });
 
-    Route::group(['middleware' => ['CekUserLogin:2']], function () {
-        Route::resource('artikel', ArtikelController::class);
-        Route::resource('profil', ProfilController::class);
-    });
+    //Route::group(['middleware' => ['CekUserLogin:2']], function () {
+    //    Route::resource('artikel', ArtikelController::class);
+     //   Route::resource('profil', ProfilController::class);
+    //});
 });

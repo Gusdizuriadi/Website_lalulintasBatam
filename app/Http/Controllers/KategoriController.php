@@ -9,8 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class KategoriController extends Controller
 {
 
-    public function __construct()
-    {
+    public function __construct(){
         $this->ModelKategori = new ModelKategori();
     }
 
@@ -34,12 +33,10 @@ class KategoriController extends Controller
     public function insert()
     {
         Request()->validate([
-            'nama_kategori' => 'required|unique:tbl_kategori, nama_kategori|min:4|max:20',
+            'nama_kategori' => 'required',
         ], [
-            'nama_kategori.required' => 'Nama Kategori tidak boleh kosong',
-            'nama_kategori.unique' => 'Nama Kategori Sudah Ada',
-            'nama_kategori.min' => 'Minimal 4 Karakter',
-            'nama_kategori.max' => 'Maximal 20 Karakter',
+            'nama_kategori.required' => 'Wajib Disii',
+            //'nama_kategori.unique' => 'Nama Kategori Sudah Ada',
         ]);
 
         $data = [
@@ -47,6 +44,44 @@ class KategoriController extends Controller
         ];
 
         $this->ModelKategori->addData($data);
-        return redirect()->route('kategori')->with('Pesan', 'Data Berhasil di Tambahkan');
+        return redirect()->route('kategori')->with('pesan', 'Data Berhasil di Tambahkan');
+    }
+
+    public function edit($id_kategori)
+    {
+        if (!$this->ModelKategori->detailData($id_kategori)) {
+            abort(404);
+        }
+
+        $data = [
+            'kategori' => $this->ModelKategori->detailData($id_kategori),
+        ];
+
+        return view('kategori.edit', $data)->with([
+            'user' => Auth::user()
+        ]);
+    }
+
+    public function update($id_kategori)
+    {
+        Request()->validate([
+            'nama_kategori' => 'required',
+        ], [
+            'nama_kategori.required' => 'Wajib Disii',
+            //'nama_kategori.unique' => 'Nama Kategori Sudah Ada',
+        ]);
+
+        $data = [
+            'nama_kategori' => Request()->nama_kategori,
+        ];
+
+        $this->ModelKategori->editData($id_kategori, $data);
+        return redirect()->route('kategori')->with('pesan', 'Data Berhasil di Update');
+    }
+
+    public function delete($id_kategori)
+    {
+        $this->ModelKategori->deleteData($id_kategori);
+        return redirect()->route('kategori')->with('pesan', 'Data Berhasil di Hapus');
     }
 }
