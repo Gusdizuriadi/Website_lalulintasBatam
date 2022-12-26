@@ -68,10 +68,10 @@ Tambah Artikel
                         <div class="form-group">
                             <label>Kategori</label>
                             <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
-                                value="{{ old('kategori_id') }}">
+                                value="">
                                 <option value="">- Pilih -</option>
                                 @foreach ($kategori as $item)
-                                <option value="{{ $item->id_kategori }}">{{ $item->nama_kategori }}</option>
+                                <option value="{{ $item->id_kategori }}" {{ old('kategori_id') == $item->id_kategori ? 'selected' : null }} >{{ $item->nama_kategori }}</option>
                                 @endforeach
                             </select>
                             @error ('kategori_id')
@@ -87,7 +87,7 @@ Tambah Artikel
                                 value="{{ old('jenis_id') }}">
                                 <option value="">- Pilih -</option>
                                 @foreach ($jenis as $item)
-                                <option value="{{ $item->id_jenis }}">{{ $item->nama_jenis }}</option>
+                                <option value="{{ $item->id_jenis }}" {{ old('jenis_id') == $item->id_jenis ? 'selected' : null }} >{{ $item->nama_jenis }}</option>
                                 @endforeach
                             </select>
                             @error ('jenis_id')
