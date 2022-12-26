@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ModelArtikel;
+use App\Models\ModelKategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -10,6 +11,7 @@ class ArtikelController extends Controller
 {
     public function __construct(){
         $this->ModelArtikel = new ModelArtikel();
+        $this->ModelKategori = new ModelKategori();
     }
 
     public function index()
@@ -24,7 +26,10 @@ class ArtikelController extends Controller
 
     public function add()
     {
-        return view('artikel.tambah')->with([
+        $kategoris = [
+            'kategori' => $this->ModelKategori->allData(),
+        ];
+        return view('artikel.tambah', compact('kategoris'))->with([
             'user' => Auth::user()
         ]);
     }

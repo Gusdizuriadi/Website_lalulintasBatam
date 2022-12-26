@@ -70,7 +70,9 @@ Tambah Artikel
                             <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
                                 value="{{ old('kategori_id') }}">
                                 <option value="">- Pilih -</option>
+                                @foreach ($kategoris as $item)
                                 <option value=""></option>
+                                @endforeach
                             </select>
                             @error ('kategori_id')
                             <div class="invalid-feedback">
