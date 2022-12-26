@@ -21,9 +21,9 @@ Tambah Artikel
                         <!-- text input -->
                         <div class="form-group">
                             <label>Judul Artikel</label>
-                            <input name="judul_artikel"
+                            <textarea name="judul_artikel"
                                 class="form-control @error('judul_artikel') is-invalid @enderror"
-                                value="{{ old('judul_artikel') }}"></input>
+                                value="{{ old('judul_artikel') }}"></textarea>
                             @error ('judul_artikel')
                             <div class="invalid-feedback">
                                 {{ $message }}

@@ -21,9 +21,9 @@ Edit Artikel
                         <!-- text input -->
                         <div class="form-group">
                             <label>Judul Artikel</label>
-                            <input name="judul_artikel"
+                            <textarea name="judul_artikel"
                                 class="form-control @error('judul_artikel') is-invalid @enderror"
-                                value="{{ $artikel->judul_artikel }}"></input>
+                                value="{{ $artikel->id_artikel }}">{{ $artikel->judul_artikel }}</textarea>
                             @error ('judul_artikel')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -54,7 +54,7 @@ Edit Artikel
                             <label>Isi Artikel</label>
                             <textarea name="deskripsi_artikel" id="summernote"
                                 class="form-control @error('deskripsi_artikel') is-invalid @enderror"
-                                value="{{ $artikel->deskripsi_artikel }}"></textarea>
+                                value="{{ $artikel->id_artikel }}">{{ $artikel->deskripsi_artikel }}</textarea>
                             @error ('deskripsi_artikel')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -69,7 +69,7 @@ Edit Artikel
                             <label>Kategori</label>
                             <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
                                 value="{{ old('kategori_id') }}">
-                                <option value="">{{ $artikel->nama_kategori }}</option>
+                                <option value="{{ $artikel->id_kategori }}">{{ $artikel->nama_kategori }}</option>
                             </select>
                             @error ('kategori_id')
                             <div class="invalid-feedback">
