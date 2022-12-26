@@ -21,7 +21,7 @@ Halaman Kelola Artikel
             </div>
         </div>
         <div class="row">
-            <div class="card-body table-responsive p-0" style="height: 400px;">
+            <div class="card-body" >
                 @if (session('pesan'))
                 <div class="alert alert-success alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -56,7 +56,7 @@ Halaman Kelola Artikel
                             <td> <img src="{{ url('gambar_artikel/'.$data->gambar_artikel) }}" width="200px"> </td>
                             <td>
                                 <a href="/artikel/detail/{{ $data->id_artikel }}" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> Detail</a>
-                                <a href="" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                                <a href="/artikel/edit/{{ $data->id_artikel }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>
                                 <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                     data-target="#delete{{ $data->id_artikel }}"><i class=" fas fa-trash"></i>
                                     Hapus

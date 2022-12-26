@@ -6,7 +6,7 @@ Tambah Jenis
 
 @section('isi')
 <section class="content">
-    <form action="{{ url('jenis/insert') }}" method="POST" enctype="multipart/formdata">
+    <form action="{{ url('jenis/insert') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="container-fluid">
             <div class="row">

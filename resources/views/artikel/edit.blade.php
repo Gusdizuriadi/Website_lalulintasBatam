@@ -1,18 +1,18 @@
 @extends('layout.main')
 
 @section('judul')
-Tambah Artikel
+Edit Artikel
 @endsection
 
 @section('isi')
 
-<form action="{{ url('artikel/insert') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('artikel/update/$artikel->id_artikel') }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <section class="content">
-        <div class="card card-primary">
+        <div class="card card-warning">
             <div class="card-header">
-                <h3 class="card-title">Tambah Data Artikel</h3>
+                <h3 class="card-title">Edit Data Artikel</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -23,7 +23,7 @@ Tambah Artikel
                             <label>Judul Artikel</label>
                             <input name="judul_artikel"
                                 class="form-control @error('judul_artikel') is-invalid @enderror"
-                                value="{{ old('judul_artikel') }}"></input>
+                                value="{{ $artikel->judul_artikel }}"></input>
                             @error ('judul_artikel')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -37,7 +37,7 @@ Tambah Artikel
                             <label>Tanggal Posting</label>
                             <input name="tanggal_posting" type="date"
                                 class="form-control @error('tanggal_posting') is-invalid @enderror"
-                                value="{{ old('tanggal_posting') }}">
+                                value="{{ $artikel->tanggal_posting }}">
                             @error ('tanggal_posting')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -54,7 +54,7 @@ Tambah Artikel
                             <label>Isi Artikel</label>
                             <textarea name="deskripsi_artikel" id="summernote"
                                 class="form-control @error('deskripsi_artikel') is-invalid @enderror"
-                                value="{{ old('deskripsi_artikel') }}"></textarea>
+                                value="{{ $artikel->deskripsi_artikel }}"></textarea>
                             @error ('deskripsi_artikel')
                             <div class="invalid-feedback">
                                 {{ $message }}
@@ -69,10 +69,7 @@ Tambah Artikel
                             <label>Kategori</label>
                             <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
                                 value="{{ old('kategori_id') }}">
-                                <option value="">- Pilih -</option>
-                                @foreach ($kategori as $item)
-                                <option value="{{ $item->id_kategori }}">{{ $item->nama_kategori }}</option>
-                                @endforeach
+                                <option value="">{{ $artikel->nama_kategori }}</option>
                             </select>
                             @error ('kategori_id')
                             <div class="invalid-feedback">
@@ -86,9 +83,7 @@ Tambah Artikel
                             <select name="jenis_id" class="form-control @error('jenis_id') is-invalid @enderror"
                                 value="{{ old('jenis_id') }}">
                                 <option value="">- Pilih -</option>
-                                @foreach ($jenis as $item)
-                                <option value="{{ $item->id_jenis }}">{{ $item->nama_jenis }}</option>
-                                @endforeach
+                                
                             </select>
                             @error ('jenis_id')
                             <div class="invalid-feedback">
@@ -111,7 +106,7 @@ Tambah Artikel
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan</button>
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-save"></i> Simpan</button>
                     <a href="{{ url('artikel') }}" class=" btn btn-sm btn-secondary"><i class="fas fa-times-circle"></i>
                         Batal</a>
                 </div>

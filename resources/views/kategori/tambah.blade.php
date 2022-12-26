@@ -6,7 +6,7 @@ Tambah Kategori
 
 @section('isi')
 <section class="content">
-    <form action="{{ url('kategori/insert') }}" method="POST" enctype="multipart/formdata">
+    <form action="{{ url('kategori/insert') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="container-fluid">
             <div class="row">

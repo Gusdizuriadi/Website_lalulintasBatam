@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ModelArtikel;
 use App\Models\ModelKategori;
+use App\Models\ModelJenis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,6 +13,7 @@ class ArtikelController extends Controller
     public function __construct(){
         $this->ModelArtikel = new ModelArtikel();
         $this->ModelKategori = new ModelKategori();
+        $this->ModelJenis = new ModelJenis();
     }
 
     public function index()
@@ -26,10 +28,14 @@ class ArtikelController extends Controller
 
     public function add()
     {
-        $kategoris = [
+        $kategori = [
             'kategori' => $this->ModelKategori->allData(),
         ];
-        return view('artikel.tambah', compact('kategoris'))->with([
+
+        $jenis = [
+            'jenis' => $this->ModelJenis->allData(),
+        ];
+        return view('artikel.tambah', $kategori, $jenis)->with([
             'user' => Auth::user()
         ]);
     }
@@ -55,7 +61,7 @@ class ArtikelController extends Controller
         //upload gambar/foto
         $file = Request()->gambar_artikel;
         $fileName = Request()->judul_artikel . '.' . $file->extension();
-        $file->move(public_path('gambar_artikel'), $fileName );
+        $file->move(public_path().'/gambar_artikel', $fileName );
 
         $data = [
             'judul_artikel' => Request()->judul_artikel,
@@ -63,11 +69,22 @@ class ArtikelController extends Controller
             'jenis_id' => Request()->jenis_id,
             'deskripsi_artikel' => Request()->deskripsi_artikel,
             'tanggal_posting' => Request()->tanggal_posting,
-            'gambar_artikel' => Request()->gambar_artikel,
+            'gambar_artikel' => $fileName,
         ];
 
         $this->ModelArtikel->addData($data);
         return redirect()->route('artikel')->with('pesan', 'Data Berhasil di Tambahkan');
+    }
+
+    public function edit($id_artikel)
+    {
+        $data = [
+            'artikel' => $this->ModelArtikel->detailData($id_artikel),
+        ];
+
+        return view('artikel.edit', $data )->with([
+            'user' => Auth::user()
+        ]);
     }
 
     public function detail($id_artikel)
