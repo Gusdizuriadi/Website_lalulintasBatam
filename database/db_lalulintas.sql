@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2022 at 05:52 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Dec 26, 2022 at 09:44 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_wesite_pertanian`
+-- Database: `db_lalulintas`
 --
 
 -- --------------------------------------------------------
@@ -30,11 +29,11 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `uuid` varchar(255) NOT NULL,
+  `connection` text NOT NULL,
+  `queue` text NOT NULL,
+  `payload` longtext NOT NULL,
+  `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -46,7 +45,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(255) NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -67,8 +66,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -80,11 +79,11 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tokenable_type` varchar(255) NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `token` varchar(64) NOT NULL,
+  `abilities` text DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -98,13 +97,23 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `tbl_artikel` (
   `id_artikel` int(11) NOT NULL,
-  `id_kategori` int(11) NOT NULL,
-  `id_jenis` int(11) NOT NULL,
-  `nama_artikel` varchar(255) NOT NULL,
+  `kategori_id` int(11) NOT NULL,
+  `jenis_id` int(11) NOT NULL,
+  `judul_artikel` longtext NOT NULL,
   `tanggal_posting` date NOT NULL,
   `deskripsi_artikel` longtext NOT NULL,
   `gambar_artikel` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_artikel`
+--
+
+INSERT INTO `tbl_artikel` (`id_artikel`, `kategori_id`, `jenis_id`, `judul_artikel`, `tanggal_posting`, `deskripsi_artikel`, `gambar_artikel`) VALUES
+(1, 1, 4, 'Kecelakaan Lalulintas Ditiban Batam Kota', '2022-12-22', 'Sejumlah kesalahan yang dilakukan pengendara dapat memicu terjadinya kecelakaan di jalan. Kesalahan umumnya terjadi lantaran banyak pengendara mobil maupun sepeda motor terlalu egois. Pengamat Transportasi dan Ketua Advokasi Masyarakat Transportasi Indonesia Ki Darmaningtyas mengatakan, kesalahan dalam berkendara terjadi lantaran pengendara hanya memiliki pengetahuan tanpa kesadaran. “Mentang-mentang pakai kendaraan sendiri sehingga menganggap jalan juga milik sendiri,” ucap Darmaningtyas, dalam webinar', 'gambar1.jpg'),
+(4, 2, 3, 'Banyak Orang Stress Didunia Ini termasuk saya hehehe', '2022-12-23', 'Pengertian stress (stres) adalah sebuah tekanan psikologis dan fisik yang bereaksi ketika menghadapi situasi yang dianggap berbahaya. Dengan kata lain, stres merupakan cara tubuh Anda menanggapi jenis tuntutan, ancaman, atau tekanan apa pun.\r\n\r\nKetika merasa terancam, sistem saraf merespons dengan melepaskan aliran hormon adrenalin dan kortisol.\r\n\r\nKedua hormon ini dapat memunculkan suatu reaksi pada tubuh Anda, antara lain jantung berdebar cepat, otot tubuh menegang, tekanan darah meningkat, dan bahkan napas jadi lebih cepat. Reaksi ini disebut “fight-or-flight” alias respons stres.\r\n\r\nDalam bentuk yang paling parahnya, tekanan psikologis serta fisik ini bisa bikin tubuh Anda menerima kekuatan tambahan untuk membela diri. Sebagai contoh, mendorong Anda untuk menginjak rem guna menghindari kecelakaan.\r\n\r\nSecara tidak langsung, tekanan psikologis dan fisik ini dapat membuat Anda berupaya menyelamatkan diri pada sesuatu yang mendesak dan berbahaya.\r\n\r\nNamun, jika kondisi tekanan psikologis ini berlangsung cukup lama dan berlangsung terus-menerus, ini bisa menyebabkan penyakit mental dan serta menyerang kesehatan fisik.\r\n\r\nSeberapa umumkah kondisi ini terjadi?\r\nStress (stres) adalah kondisi yang dihadapi semua orang dari waktu ke waktu. Bisa jadi satu kali dalam jangka pendek, bisa juga berulang kali dalam jangka panjang. Ini karena stres hadir dalam kehidupan Anda, meliputi:\r\n\r\nStres rutin terkait sekolah, stres karena lingkungan kerja yang buruk, masalah keluarga, dan tanggung jawab sehari-hari.\r\nStres terkait dengan perubahan negatif mendadak, seperti Anda atau pasangan kehilangan pekerjaan, mengalami perceraian, atau terkena penyakit tertentu.\r\nStres traumatis yang dialami akibat suatu peristiwa, seperti kecelakaan, bencana alam, atau penyerangan yang membuat seseorang berada dalam bahaya.\r\nNamun, setiap orang memiliki cara berbeda-beda dalam menghadapi stres sehingga beberapa orang bisa dengan cepat mengatasinya dan beberapa yang lain butuh waktu lama.\r\n\r\nJenis-jenis stress\r\nMenurut Medline Plus, berikut ini adalah 2 jenis utama dari stress (stres) yang umumnya diketahui:', 'gambar2.jpg'),
+(9, 2, 4, 'bang ogy berasal dari belkang padang', '2022-12-26', '<p>dia anak yang baik</p>', 'bang ogy berasal dari belkang padang.jpg'),
+(11, 1, 2, 'dsgsdhgsh', '2022-12-26', '<p>shshshsh</p>', 'dsgsdhgsh.png');
 
 -- --------------------------------------------------------
 
@@ -115,7 +124,7 @@ CREATE TABLE `tbl_artikel` (
 CREATE TABLE `tbl_jenis` (
   `id_jenis` int(11) NOT NULL,
   `nama_jenis` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_jenis`
@@ -137,7 +146,7 @@ INSERT INTO `tbl_jenis` (`id_jenis`, `nama_jenis`) VALUES
 CREATE TABLE `tbl_kategori` (
   `id_kategori` int(11) NOT NULL,
   `nama_kategori` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tbl_kategori`
@@ -159,7 +168,7 @@ CREATE TABLE `tbl_video` (
   `nama_video` varchar(255) NOT NULL,
   `link_video` varchar(255) NOT NULL,
   `gambar_video` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -169,13 +178,13 @@ CREATE TABLE `tbl_video` (
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `level` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` varchar(5) NOT NULL,
+  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -223,9 +232,7 @@ ALTER TABLE `personal_access_tokens`
 -- Indexes for table `tbl_artikel`
 --
 ALTER TABLE `tbl_artikel`
-  ADD PRIMARY KEY (`id_artikel`),
-  ADD UNIQUE KEY `id_kategori` (`id_kategori`) USING BTREE,
-  ADD UNIQUE KEY `id_jenis` (`id_jenis`);
+  ADD PRIMARY KEY (`id_artikel`);
 
 --
 -- Indexes for table `tbl_jenis`
@@ -273,19 +280,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `tbl_artikel`
 --
 ALTER TABLE `tbl_artikel`
-  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_artikel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_jenis`
 --
 ALTER TABLE `tbl_jenis`
-  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
