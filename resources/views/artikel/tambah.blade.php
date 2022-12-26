@@ -67,12 +67,12 @@ Tambah Artikel
                         <!-- select -->
                         <div class="form-group">
                             <label>Kategori</label>
-                            <select name="id_kategori" class="form-control @error('id_kategori') is-invalid @enderror"
-                                value="{{ old('id_kategori') }}">
+                            <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
+                                value="{{ old('kategori_id') }}">
                                 <option value="">- Pilih -</option>
                                 <option value=""></option>
                             </select>
-                            @error ('id_kategori')
+                            @error ('kategori_id')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -81,12 +81,12 @@ Tambah Artikel
 
                         <div class="form-group">
                             <label>Jenis Pelanggaran</label>
-                            <select name="id_jenis" class="form-control @error('id_jenis') is-invalid @enderror"
-                                value="{{ old('id_jenis') }}">
+                            <select name="jenis_id" class="form-control @error('jenis_id') is-invalid @enderror"
+                                value="{{ old('jenis_id') }}">
                                 <option value="">- Pilih -</option>
                                 <option></option>
                             </select>
-                            @error ('id_jenis')
+                            @error ('jenis_id')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

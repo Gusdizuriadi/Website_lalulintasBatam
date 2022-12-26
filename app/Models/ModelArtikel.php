@@ -11,8 +11,8 @@ class ModelArtikel extends Model
     //use HasFactory;
     public function allData (){
         return DB::table('tbl_artikel')
-        ->leftJoin('tbl_kategori', 'tbl_kategori.id_kategori', '=', 'tbl_artikel.id_kategori')
-        ->leftJoin('tbl_jenis', 'tbl_jenis.id_jenis', '=', 'tbl_artikel.id_jenis')
+        ->leftJoin('tbl_kategori', 'tbl_kategori.id_kategori', '=', 'tbl_artikel.kategori_id')
+        ->leftJoin('tbl_jenis', 'tbl_jenis.id_jenis', '=', 'tbl_artikel.jenis_id')
         ->orderByRaw('tanggal_posting DESC')
         ->get();
     } 
@@ -20,17 +20,14 @@ class ModelArtikel extends Model
     public function detailData($id_artikel)
     {
         return DB::table('tbl_artikel')
-        ->leftJoin('tbl_kategori', 'tbl_kategori.id_kategori', '=', 'tbl_artikel.id_kategori')
-        ->leftJoin('tbl_jenis', 'tbl_jenis.id_jenis', '=', 'tbl_artikel.id_jenis')
+        ->leftJoin('tbl_kategori', 'tbl_kategori.id_kategori', '=', 'tbl_artikel.kategori_id')
+        ->leftJoin('tbl_jenis', 'tbl_jenis.id_jenis', '=', 'tbl_artikel.jenis_id')
         ->where('id_artikel', $id_artikel)->first();
     }
 
     public function addData($data)
     {
-        return DB::table('tbl_artikel')
-        ->leftJoin('tbl_kategori', 'tbl_kategori.id_kategori', '=', 'tbl_artikel.id_kategori')
-        ->leftJoin('tbl_jenis', 'tbl_jenis.id_jenis', '=', 'tbl_artikel.id_jenis')
-        ->insert($data);
+        DB::table('tbl_artikel')->insert($data);
     }
 
     public function deleteData($id_artikel)
