@@ -32,10 +32,10 @@ class JenisController extends Controller
     public function insert()
     {
         Request()->validate([
-            'nama_jenis' => 'required',
+            'nama_jenis' => 'required|unique:tbl_jenis,nama_jenis',
         ], [
             'nama_jenis.required' => 'Wajib Disii',
-            //'nama_jenis.unique' => 'Nama jenis Sudah Ada',
+            'nama_jenis.unique' => 'Nama jenis pelanggaran Sudah Ada',
         ]);
 
         $data = [

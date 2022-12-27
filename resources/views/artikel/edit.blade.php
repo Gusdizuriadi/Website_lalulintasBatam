@@ -6,7 +6,7 @@ Edit Artikel
 
 @section('isi')
 
-<form action="{{ url('artikel/update/$artikel->id_artikel') }}" method="POST" enctype="multipart/form-data">
+<form action="/artikel/update/{{ $artikel->id_artikel }}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <section class="content">
@@ -82,8 +82,8 @@ Edit Artikel
                             <label>Jenis Pelanggaran</label>
                             <select name="jenis_id" class="form-control @error('jenis_id') is-invalid @enderror"
                                 value="{{ old('jenis_id') }}">
-                                <option value="">- Pilih -</option>
-                                
+                                <option value="{{ $artikel->id_jenis }}">{{ $artikel->nama_jenis }}</option>
+
                             </select>
                             @error ('jenis_id')
                             <div class="invalid-feedback">
@@ -93,7 +93,7 @@ Edit Artikel
                         </div>
 
                         <div class="form-group">
-                            <label>Gambar Artikel</label>
+                            <label>Ganti Gambar Artikel</label>
                             <input name="gambar_artikel" type="file"
                                 class="form-control @error('gambar_artikel') is-invalid @enderror"
                                 value="{{ old('gambar_artikel') }}">
@@ -102,6 +102,10 @@ Edit Artikel
                                 {{ $message }}
                             </div>
                             @enderror
+                        </div>
+
+                        <div class="col-sm-12">
+                            <img src="{{ url('gambar_artikel/'.$artikel->gambar_artikel) }}" width="365px">
                         </div>
                     </div>
                 </div>

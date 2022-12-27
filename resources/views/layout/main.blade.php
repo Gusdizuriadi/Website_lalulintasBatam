@@ -152,7 +152,7 @@
     $(function() {
         // Summernote
         $('#summernote').summernote({
-            height: "250px"
+            height: "450px"
         })
 
         // CodeMirror

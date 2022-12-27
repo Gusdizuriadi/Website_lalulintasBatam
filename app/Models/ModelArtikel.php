@@ -27,11 +27,21 @@ class ModelArtikel extends Model
 
     public function addData($data)
     {
-        DB::table('tbl_artikel')->insert($data);
+        DB::table('tbl_artikel')
+        ->insert($data);
+    }
+
+    public function editData($id_artikel, $data)
+    {
+        DB::table('tbl_artikel')
+        ->where('id_artikel', $id_artikel)
+        ->update($data);
     }
 
     public function deleteData($id_artikel)
     {
-        DB::table('tbl_artikel')->where('id_artikel', $id_artikel)->delete();
+        DB::table('tbl_artikel')
+        ->where('id_artikel', $id_artikel)
+        ->delete();
     }
 }

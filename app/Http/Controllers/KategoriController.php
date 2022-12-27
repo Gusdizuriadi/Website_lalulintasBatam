@@ -33,10 +33,10 @@ class KategoriController extends Controller
     public function insert()
     {
         Request()->validate([
-            'nama_kategori' => 'required',
+            'nama_kategori' => 'required|unique:tbl_kategori,nama_kategori',
         ], [
             'nama_kategori.required' => 'Wajib Disii',
-            //'nama_kategori.unique' => 'Nama Kategori Sudah Ada',
+            'nama_kategori.unique' => 'Nama Kategori Sudah Ada',
         ]);
 
         $data = [
@@ -68,7 +68,6 @@ class KategoriController extends Controller
             'nama_kategori' => 'required',
         ], [
             'nama_kategori.required' => 'Wajib Disii',
-            //'nama_kategori.unique' => 'Nama Kategori Sudah Ada',
         ]);
 
         $data = [

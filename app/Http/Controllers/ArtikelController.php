@@ -43,7 +43,7 @@ class ArtikelController extends Controller
     public function insert()
     {
         Request()->validate([
-            'judul_artikel' => 'required',
+            'judul_artikel' => 'required|unique:tbl_artikel,judul_artikel|min:30',
             'kategori_id' => 'required',
             'jenis_id' => 'required',
             'deskripsi_artikel' => 'required',
@@ -51,6 +51,8 @@ class ArtikelController extends Controller
             'gambar_artikel' => 'required|mimes:jpg,jpeg,bmp,png',
         ], [
             'judul_artikel.required' => 'Wajib Disii',
+            'judul_artikel.unique' => 'Judul Artikel sudah ada !!!',
+            'judul_artikel.min' => 'Minimal 30 karakter !!!',
             'kategori_id.required' => 'Wajib Disii',
             'jenis_id.required' => 'Wajib Disii',
             'deskripsi_artikel.required' => 'Wajib Disii',
@@ -85,6 +87,57 @@ class ArtikelController extends Controller
         return view('artikel.edit', $data )->with([
             'user' => Auth::user()
         ]);
+    }
+
+    public function update($id_artikel)
+    {
+        Request()->validate([
+            'judul_artikel' => 'required|min:30',
+            'kategori_id' => 'required',
+            'jenis_id' => 'required',
+            'deskripsi_artikel' => 'required',
+            'tanggal_posting' => 'required',
+            'gambar_artikel' => 'mimes:jpg,jpeg,bmp,png',
+        ], [
+            'judul_artikel.required' => 'Wajib Disii',
+            'judul_artikel.min' => 'Minimal 30 karakter !!!',
+            'kategori_id.required' => 'Wajib Disii',
+            'jenis_id.required' => 'Wajib Disii',
+            'deskripsi_artikel.required' => 'Wajib Disii',
+            'tanggal_posting.required' => 'Wajib Disii',
+        ]);
+
+        if (Request()->gambar_artikel <> "") {
+            //jika ingin ganti foto
+            $file = Request()->gambar_artikel;
+            $fileName = Request()->judul_artikel . '.' . $file->extension();
+            $file->move(public_path().'/gambar_artikel', $fileName );
+
+            $data = [
+                'judul_artikel' => Request()->judul_artikel,
+                'kategori_id' => Request()->kategori_id,
+                'jenis_id' => Request()->jenis_id,
+                'deskripsi_artikel' => Request()->deskripsi_artikel,
+                'tanggal_posting' => Request()->tanggal_posting,
+                'gambar_artikel' => $fileName,
+        ];
+
+            $this->ModelArtikel->editData($id_artikel, $data);
+
+        }else {
+            //jika tidak ingin ganti foto
+            $data = [
+                'judul_artikel' => Request()->judul_artikel,
+                'kategori_id' => Request()->kategori_id,
+                'jenis_id' => Request()->jenis_id,
+                'deskripsi_artikel' => Request()->deskripsi_artikel,
+                'tanggal_posting' => Request()->tanggal_posting,
+            ];
+            
+            $this->ModelArtikel->editData($id_artikel, $data);
+        }
+
+        return redirect()->route('artikel')->with('pesan', 'Data Berhasil di Update');
     }
 
     public function detail($id_artikel)
