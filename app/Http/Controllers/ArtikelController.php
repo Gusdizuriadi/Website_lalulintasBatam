@@ -82,6 +82,8 @@ class ArtikelController extends Controller
     {
         $data = [
             'artikel' => $this->ModelArtikel->detailData($id_artikel),
+            'kategori' => $this->ModelKategori->allData(),
+            'jenis' => $this->ModelJenis->allData(),
         ];
 
         return view('artikel.edit', $data )->with([

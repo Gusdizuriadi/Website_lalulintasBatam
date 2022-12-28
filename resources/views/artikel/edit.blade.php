@@ -68,8 +68,11 @@ Edit Artikel
                         <div class="form-group">
                             <label>Kategori</label>
                             <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
-                                value="{{ old('kategori_id') }}">
-                                <option value="{{ $artikel->id_kategori }}">{{ $artikel->nama_kategori }}</option>
+                                value="{{ $artikel->id_kategori }}">
+                                @foreach ($kategori as $item)
+                                <option value="{{ $item->id_kategori }}" {{ $item->id_kategori == $artikel->kategori_id  ? 'selected' : '' }}>
+                                    {{ $item->nama_kategori }}</option>
+                                @endforeach
                             </select>
                             @error ('kategori_id')
                             <div class="invalid-feedback">
@@ -81,9 +84,11 @@ Edit Artikel
                         <div class="form-group">
                             <label>Jenis Pelanggaran</label>
                             <select name="jenis_id" class="form-control @error('jenis_id') is-invalid @enderror"
-                                value="{{ old('jenis_id') }}">
-                                <option value="{{ $artikel->id_jenis }}">{{ $artikel->nama_jenis }}</option>
-
+                                value="{{ $artikel->id_jenis }}">
+                                @foreach ($jenis as $item)
+                                <option value="{{ $item->id_jenis }}" {{ $item->id_jenis == $artikel->jenis_id  ? 'selected' : '' }}>
+                                    {{ $item->nama_jenis }}</option>
+                                @endforeach
                             </select>
                             @error ('jenis_id')
                             <div class="invalid-feedback">

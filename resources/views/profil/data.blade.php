@@ -49,7 +49,7 @@ Halaman Kelola Profil
                         <td>
                             <a href="/profil/detail/{{ $data->id_profil }}" class="btn btn-sm btn-info"><i
                                     class="fas fa-eye"></i> Detail</a>
-                            <a href="" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="/profil/edit/{{ $data->id_profil }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>
                             <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
                                 data-target="#delete{{ $data->id_profil }}"><i class=" fas fa-trash"></i>
                                 Hapus

@@ -63,6 +63,10 @@ Route::group(['middleware' => ['auth']], function () {
 
 
         Route::get('profil', [ProfilController::class, 'index'])->name('profil');
+        Route::get('/profil/tambah', [ProfilController::class, 'add']);
+        Route::post('/profil/insert', [ProfilController::class, 'insert']);
+        Route::get('/profil/edit/{id_profil}', [ProfilController::class, 'edit']);
+        Route::post('/profil/update/{id_profil}', [ProfilController::class, 'update']);
         Route::get('/profil/detail/{id_profil}', [ProfilController::class, 'detail']);
         Route::get('/profil/delete/{id_profil}', [ProfilController::class, 'delete']);
 
@@ -78,7 +82,13 @@ Route::group(['middleware' => ['auth']], function () {
     //    Route::get('/artikel/detail/{id_artikel}', [ArtikelController::class, 'detail']);
     //    Route::get('/artikel/delete/{id_artikel}', [ArtikelController::class, 'delete']);
 
-        
-    //    Route::resource('profil', ProfilController::class);
+    
+    //    Route::get('profil', [ProfilController::class, 'index'])->name('profil');
+    //    Route::get('/profil/tambah', [ProfilController::class, 'add']);
+    //    Route::post('/profil/insert', [ProfilController::class, 'insert']);
+    //    Route::get('/profil/edit/{id_profil}', [ProfilController::class, 'edit']);
+    //    Route::post('/profil/update/{id_profil}', [ProfilController::class, 'update']);
+    //    Route::get('/profil/detail/{id_profil}', [ProfilController::class, 'detail']);
+    //    Route::get('/profil/delete/{id_profil}', [ProfilController::class, 'delete']);
     //});
 });
