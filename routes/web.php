@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Operator;
 use App\Http\Controllers\Beranda;
 use App\Http\Controllers\JenisController;
@@ -26,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 //   return view('welcome');
 //});
 
-//Route::get('login', [LoginController::class, 'index'])->name('login');
+Route::get('beranda', [FrontendController::class, 'index'])->name('beranda');
 
 Route::get('/', [LayoutController::class, 'index'])->middleware('auth');
 Route::get('/home', [LayoutController::class, 'index'])->middleware('auth');
