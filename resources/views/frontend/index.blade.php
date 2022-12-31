@@ -2,307 +2,618 @@
 @section('main')
 
 <!-- ======= About Section ======= -->
-<section id="about" class="about">
-    <div class="container" data-aos="fade-up">
-        @foreach ($profil as $data)
-        <div class="row">
-            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
-                <img src="{{ url('gambar_profil/'.$data->gambar_profil) }}" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                <h3>{{ $data->nama_profil}}</h3>
-                <p class="fst-italic">
-                {{ $data->deskripsi_profil}}
-                </p>
-                <ul>
-                    <li><i class="bi bi-check-circle"></i> {{ $data->visi}}</li>
-                    <li><i class="bi bi-check-circle"></i> {{ $data->misi}}</li>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-7 px-0">
+            <div class="owl-carousel main-carousel position-relative">
+                <div class="position-relative overflow-hidden" style="height: 500px;">
+                    <img class="img-fluid h-100" src="{{ asset('/') }}img/news-800x500-1.jpg"
+                        style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">Business</a>
+                            <a class="text-white" href="">Jan 01, 2045</a>
+                        </div>
+                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit
+                            amet elit. Proin vitae porta diam...</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 500px;">
+                    <img class="img-fluid h-100" src="{{ asset('/') }}img/news-800x500-2.jpg"
+                        style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">Business</a>
+                            <a class="text-white" href="">Jan 01, 2045</a>
+                        </div>
+                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit
+                            amet elit. Proin vitae porta diam...</a>
+                    </div>
+                </div>
+                <div class="position-relative overflow-hidden" style="height: 500px;">
+                    <img class="img-fluid h-100" src="{{ asset('/') }}img/news-800x500-3.jpg"
+                        style="object-fit: cover;">
+                    <div class="overlay">
+                        <div class="mb-2">
+                            <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                href="">Business</a>
+                            <a class="text-white" href="">Jan 01, 2045</a>
+                        </div>
+                        <a class="h2 m-0 text-white text-uppercase font-weight-bold" href="">Lorem ipsum dolor sit
+                            amet elit. Proin vitae porta diam...</a>
+                    </div>
+                </div>
             </div>
         </div>
-        @endforeach
+        <div class="col-lg-5 px-0">
+            <div class="row mx-0">
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="{{ asset('/') }}img/news-700x435-1.jpg"
+                            style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Business</a>
+                                <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                dolor sit amet elit...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="{{ asset('/') }}img/news-700x435-2.jpg"
+                            style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Business</a>
+                                <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                dolor sit amet elit...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="{{ asset('/') }}img/news-700x435-3.jpg"
+                            style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Business</a>
+                                <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                dolor sit amet elit...</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 px-0">
+                    <div class="position-relative overflow-hidden" style="height: 250px;">
+                        <img class="img-fluid w-100 h-100" src="{{ asset('/') }}img/news-700x435-4.jpg"
+                            style="object-fit: cover;">
+                        <div class="overlay">
+                            <div class="mb-2">
+                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                    href="">Business</a>
+                                <a class="text-white" href=""><small>Jan 01, 2045</small></a>
+                            </div>
+                            <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum
+                                dolor sit amet elit...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</section><!-- End About Section -->
+</div>
+<!-- Main News Slider End -->
 
-<!-- ======= Counts Section ======= -->
-<section id="counts" class="counts section-bg">
+
+<!-- Breaking News Start -->
+<div class="container-fluid bg-dark py-3 mb-3">
     <div class="container">
-
-        <div class="row counters">
-
-            <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                <p>Students</p>
-            </div>
-
-            <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                <p>Courses</p>
-            </div>
-
-            <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                <p>Events</p>
-            </div>
-
-            <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                    class="purecounter"></span>
-                <p>Trainers</p>
-            </div>
-
-        </div>
-
-    </div>
-</section><!-- End Counts Section -->
-
-<!-- ======= Why Us Section ======= -->
-<section id="why-us" class="why-us">
-    <div class="container" data-aos="fade-up">
-
-        <div class="row">
-            <div class="col-lg-4 d-flex align-items-stretch">
-                <div class="content">
-                    <h3>Why Choose Mentor?</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                        Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus
-                        optio ad corporis.
-                    </p>
-                    <div class="text-center">
-                        <a href="about.html" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+        <div class="row align-items-center bg-dark">
+            <div class="col-12">
+                <div class="d-flex justify-content-between">
+                    <div class="bg-primary text-dark text-center font-weight-medium py-2" style="width: 170px;">
+                        Berita Terkini</div>
+                    <div class="owl-carousel tranding-carousel position-relative d-inline-flex align-items-center ml-3"
+                        style="width: calc(100% - 170px); padding-right: 90px;">
+                        <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"
+                                href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt,
+                                sed faucibus nisl sodales</a></div>
+                        <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"
+                                href="">Lorem ipsum dolor sit amet elit. Proin interdum lacus eget ante tincidunt,
+                                sed faucibus nisl sodales</a></div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon-boxes d-flex flex-column justify-content-center">
-                    <div class="row">
-                        <div class="col-xl-4 d-flex align-items-stretch">
-                            <div class="icon-box mt-4 mt-xl-0">
-                                <i class="bx bx-receipt"></i>
-                                <h4>Corporis voluptates sit</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut
-                                    aliquip</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 d-flex align-items-stretch">
-                            <div class="icon-box mt-4 mt-xl-0">
-                                <i class="bx bx-cube-alt"></i>
-                                <h4>Ullamco laboris ladore pan</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                                    deserunt</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 d-flex align-items-stretch">
-                            <div class="icon-box mt-4 mt-xl-0">
-                                <i class="bx bx-images"></i>
-                                <h4>Labore consequatur</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis
-                                    facere</p>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End .content-->
-            </div>
         </div>
-
     </div>
-</section><!-- End Why Us Section -->
+</div>
+<!-- Breaking News End -->
 
-<!-- ======= Features Section ======= -->
-<section id="features" class="features">
-    <div class="container" data-aos="fade-up">
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-            <div class="col-lg-3 col-md-4">
-                <div class="icon-box">
-                    <i class="ri-store-line" style="color: #ffbb2c;"></i>
-                    <h3><a href="">Lorem Ipsum</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                <div class="icon-box">
-                    <i class="ri-bar-chart-box-line" style="color: #5578ff;"></i>
-                    <h3><a href="">Dolor Sitema</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
-                <div class="icon-box">
-                    <i class="ri-calendar-todo-line" style="color: #e80368;"></i>
-                    <h3><a href="">Sed perspiciatis</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
-                <div class="icon-box">
-                    <i class="ri-paint-brush-line" style="color: #e361ff;"></i>
-                    <h3><a href="">Magni Dolores</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-database-2-line" style="color: #47aeff;"></i>
-                    <h3><a href="">Nemo Enim</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-gradienter-line" style="color: #ffa76e;"></i>
-                    <h3><a href="">Eiusmod Tempor</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-                    <h3><a href="">Midela Teren</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-price-tag-2-line" style="color: #4233ff;"></i>
-                    <h3><a href="">Pira Neve</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-anchor-line" style="color: #b2904f;"></i>
-                    <h3><a href="">Dirada Pack</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-disc-line" style="color: #b20969;"></i>
-                    <h3><a href="">Moton Ideal</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-base-station-line" style="color: #ff5828;"></i>
-                    <h3><a href="">Verdo Park</a></h3>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box">
-                    <i class="ri-fingerprint-line" style="color: #29cc61;"></i>
-                    <h3><a href="">Flavor Nivelanda</a></h3>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section><!-- End Features Section -->
-
-<!-- ======= Popular Courses Section ======= -->
-<section id="popular-courses" class="courses">
-    <div class="container" data-aos="fade-up">
-
+<!-- Featured News Slider Start -->
+<div class="container-fluid pt-5 mb-3">
+    <div class="container">
         <div class="section-title">
-            <h2>Courses</h2>
-            <p>Popular Courses</p>
+            <h4 class="m-0 text-uppercase font-weight-bold">Berita Trending</h4>
         </div>
-
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-            @foreach ($artikel as $art)
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-                <div class="course-item">
-                    <img src="{{ url('gambar_artikel/'.$art->gambar_artikel) }}" class="img-fluid">
-                    <div class="course-content">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4>{{ $art->nama_kategori}}</h4>
-                            <p class="price">{{ $art->nama_jenis }}</p>
-                        </div>
-
-                        <h3><a href="course-details.html">{{ $art->judul_artikel }}</a></h3>
-                        <p>{{ $art->tanggal_posting }}</p>
-                        <div class="trainer d-flex justify-content-between align-items-center">
-                            <div class="trainer-profile d-flex align-items-center">
-                                <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
-                                <span>Lana</span>
-                            </div>
-                            <div class="trainer-rank d-flex align-items-center">
-                                <i class="bx bx-user"></i>&nbsp;35
-                                &nbsp;&nbsp;
-                                <i class="bx bx-heart"></i>&nbsp;42
-                            </div>
-                        </div>
+        <div class="owl-carousel news-carousel carousel-item-4 position-relative">
+            @foreach ($artikel as $data)
+            <div class="position-relative overflow-hidden" style="height: 300px;">
+                <img class="img-fluid h-100" src="{{ url('gambar_artikel/'.$data->gambar_artikel) }}" style="object-fit: cover;">
+                <div class="overlay">
+                    <div class="mb-2">
+                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                            href="">{{ $data->nama_kategori }}</a>
+                        <a class="text-white" href=""><small>{{ $data->tanggal_posting }}</small></a>
                     </div>
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit
+                        amet elit...</a>
                 </div>
-            </div> <!-- End Course Item-->
+            </div>
             @endforeach
         </div>
-
     </div>
-</section><!-- End Popular Courses Section -->
+</div>
+<!-- Featured News Slider End -->
 
-<!-- ======= Trainers Section ======= -->
-<section id="trainers" class="trainers">
-    <div class="container" data-aos="fade-up">
 
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="member">
-                    <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-                    <div class="member-content">
-                        <h4>Walter White</h4>
-                        <span>Web Development</span>
-                        <p>
-                            Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis
-                            quaerat qui aut aut aut
-                        </p>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
+<!-- News With Sidebar Start -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title">
+                            <h4 class="m-0 text-uppercase font-weight-bold">Berita Terbaru</h4>
+                            <a class="text-secondary font-weight-medium text-decoration-none" href="">View All</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="{{ asset('/') }}img/news-700x435-1.jpg"
+                                style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                    ipsum dolor sit amet elit...</a>
+                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                    rebum clita rebum dolor stet amet justo</p>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="{{ asset('/') }}img/user.jpg" width="25"
+                                        height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="{{ asset('/') }}img/news-700x435-2.jpg"
+                                style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                    ipsum dolor sit amet elit...</a>
+                                <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                    rebum clita rebum dolor stet amet justo</p>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="{{ asset('/') }}img/user.jpg" width="25"
+                                        height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                        <a href=""><img class="img-fluid w-100" src="{{ asset('/') }}img/ads-728x90.png" alt=""></a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="{{ asset('/') }}img/news-700x435-3.jpg"
+                                style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                    ipsum dolor sit amet elit...</a>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="{{ asset('/') }}img/user.jpg" width="25"
+                                        height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mb-3">
+                            <img class="img-fluid w-100" src="{{ asset('/') }}img/news-700x435-4.jpg"
+                                style="object-fit: cover;">
+                            <div class="bg-white border border-top-0 p-4">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h4 d-block mb-0 text-secondary text-uppercase font-weight-bold" href="">Lorem
+                                    ipsum dolor sit amet elit...</a>
+                            </div>
+                            <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle mr-2" src="{{ asset('/') }}img/user.jpg" width="25"
+                                        height="25" alt="">
+                                    <small>John Doe</small>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                    <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-1.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-2.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-3.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-4.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 mb-3">
+                        <a href=""><img class="img-fluid w-100" src="{{ asset('/') }}img/ads-728x90.png" alt=""></a>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row news-lg mx-0 mb-3">
+                            <div class="col-md-6 h-100 px-0">
+                                <img class="img-fluid h-100" src="{{ asset('/') }}img/news-700x435-5.jpg"
+                                    style="object-fit: cover;">
+                            </div>
+                            <div class="col-md-6 d-flex flex-column border bg-white h-100 px-0">
+                                <div class="mt-auto p-4">
+                                    <div class="mb-2">
+                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
+                                            href="">Business</a>
+                                        <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                    </div>
+                                    <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
+                                        href="">Lorem ipsum dolor sit amet elit...</a>
+                                    <p class="m-0">Dolor lorem eos dolor duo et eirmod sea. Dolor sit magna
+                                        rebum clita rebum dolor stet amet justo</p>
+                                </div>
+                                <div class="d-flex justify-content-between bg-white border-top mt-auto p-4">
+                                    <div class="d-flex align-items-center">
+                                        <img class="rounded-circle mr-2" src="{{ asset('/') }}img/user.jpg" width="25"
+                                            height="25" alt="">
+                                        <small>John Doe</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <small class="ml-3"><i class="far fa-eye mr-2"></i>12345</small>
+                                        <small class="ml-3"><i class="far fa-comment mr-2"></i>123</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-1.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-2.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-3.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-4.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="member">
-                    <img src="{{ asset('/') }}assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
-                    <div class="member-content">
-                        <h4>Sarah Jhinson</h4>
-                        <span>Marketing</span>
-                        <p>
-                            Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto
-                            rerum rerum temporibus
-                        </p>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
+            <div class="col-lg-4">
+                <!-- Social Follow Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Ikuti Kami</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #39569E;">
+                            <i class="fab fa-facebook-f text-center py-4 mr-3"
+                                style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Fans</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #52AAF4;">
+                            <i class="fab fa-twitter text-center py-4 mr-3"
+                                style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Followers</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #0185AE;">
+                            <i class="fab fa-linkedin-in text-center py-4 mr-3"
+                                style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Connects</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #C8359D;">
+                            <i class="fab fa-instagram text-center py-4 mr-3"
+                                style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Followers</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none mb-3"
+                            style="background: #DC472E;">
+                            <i class="fab fa-youtube text-center py-4 mr-3"
+                                style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Subscribers</span>
+                        </a>
+                        <a href="" class="d-block w-100 text-white text-decoration-none" style="background: #055570;">
+                            <i class="fab fa-vimeo-v text-center py-4 mr-3"
+                                style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+                            <span class="font-weight-medium">12,345 Followers</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Social Follow End -->
+
+                <!-- Ads Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Iklan</h4>
+                    </div>
+                    <div class="bg-white text-center border border-top-0 p-3">
+                        <a href=""><img class="img-fluid" src="{{ asset('/') }}img/news-800x500-2.jpg" alt=""></a>
+                    </div>
+                </div>
+                <!-- Ads End -->
+
+                <!-- Popular News Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Berita Populer</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-1.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-2.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-3.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-4.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
+                            <img class="img-fluid" src="{{ asset('/') }}img/news-110x110-5.jpg" alt="">
+                            <div
+                                class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                <div class="mb-2">
+                                    <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
+                                        href="">Business</a>
+                                    <a class="text-body" href=""><small>Jan 01, 2045</small></a>
+                                </div>
+                                <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">Lorem ipsum
+                                    dolor sit amet elit...</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <!-- Popular News End -->
 
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="member">
-                    <img src="{{ asset('/') }}assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
-                    <div class="member-content">
-                        <h4>William Anderson</h4>
-                        <span>Content</span>
-                        <p>
-                            Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et
-                            laborum toro des clara
-                        </p>
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
+                <!-- Newsletter Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Newsletter</h4>
+                    </div>
+                    <div class="bg-white text-center border border-top-0 p-3">
+                        <p>Aliqu justo et labore at eirmod justo sea erat diam dolor diam vero kasd</p>
+                        <div class="input-group mb-2" style="width: 100%;">
+                            <input type="text" class="form-control form-control-lg" placeholder="Your Email">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                            </div>
+                        </div>
+                        <small>Lorem ipsum dolor sit amet elit</small>
+                    </div>
+                </div>
+                <!-- Newsletter End -->
+
+                <!-- Tags Start -->
+                <div class="mb-3">
+                    <div class="section-title mb-0">
+                        <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                    </div>
+                    <div class="bg-white border border-top-0 p-3">
+                        <div class="d-flex flex-wrap m-n1">
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
                         </div>
                     </div>
                 </div>
+                <!-- Tags End -->
             </div>
-
         </div>
-
     </div>
-</section><!-- End Trainers Section -->
+</div>
 @endsection

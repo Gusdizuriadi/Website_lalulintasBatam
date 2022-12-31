@@ -3,80 +3,56 @@
 
 <head>
     <meta charset="utf-8">
+    <title>BizNews - Free News Website Template</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-    <title>Mentor Bootstrap Template - Index</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <!-- Favicon -->
+    <link href="{{ asset('/') }}img/favicon.ico" rel="icon">
 
-    <!-- Favicons -->
-    <link href="{{ asset('/') }}assets/img/favicon.png" rel="icon">
-    <link href="{{ asset('/') }}assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('/') }}assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="{{ asset('/') }}assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="{{ asset('/') }}assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{ asset('/') }}assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="{{ asset('/') }}assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="{{ asset('/') }}assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="{{ asset('/') }}assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('/') }}assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Mentor - v4.9.1
-  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('/') }}css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-    <!-- ======= Header ======= -->
+    <!-- Topbar Start -->
     @include('frontend.body.header')
-    <!-- End Header -->
+    <!-- Navbar End -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex justify-content-center align-items-center">
-        <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-            <h1>Learning Today,<br>Leading Tomorrow</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
-            <a href="courses.html" class="btn-get-started">Get Started</a>
-        </div>
-    </section><!-- End Hero -->
 
-    <main id="main">
-
+    <!-- Main News Slider Start -->
     @yield('main')
-    
-    </main><!-- End #main -->
+    <!-- News With Sidebar End -->
 
-    <!-- ======= Footer ======= -->
+
+    <!-- Footer Start -->
     @include('frontend.body.footer')
-    <!-- End Footer -->
+    <!-- Footer End -->
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('/') }}assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="{{ asset('/') }}assets/vendor/aos/aos.js"></script>
-    <script src="{{ asset('/') }}assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('/') }}assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="{{ asset('/') }}assets/vendor/php-email-form/validate.js"></script>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-    <!-- Template Main JS File -->
-    <script src="{{ asset('/') }}assets/js/main.js"></script>
 
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('/') }}lib/easing/easing.min.js"></script>
+    <script src="{{ asset('/') }}lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ asset('/') }}js/main.js"></script>
 </body>
 
 </html>

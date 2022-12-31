@@ -21,7 +21,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="../../index2.html" class="h2"><b>LalulintasBatam</b>.com</a>
+                <a href="{{ url('beranda') }}" class="h2"><b>LalulintasBatam</b>.com</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
