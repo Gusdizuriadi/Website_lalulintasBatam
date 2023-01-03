@@ -3,41 +3,8 @@
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-sm bg-dark p-0">
                 <ul class="navbar-nav ml-n2">
-                    <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="#">Monday, January 1, 2045</a>
-                    </li>
-                    <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="#">Advertise</a>
-                    </li>
-                    <li class="nav-item border-right border-secondary">
-                        <a class="nav-link text-body small" href="#">Contact</a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link text-body small" href="{{ url('login') }}">Login</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <div class="col-lg-3 text-right d-none d-md-block">
-            <nav class="navbar navbar-expand-sm bg-dark p-0">
-                <ul class="navbar-nav ml-auto mr-n2">
-                    <li class="nav-item">
-                        <a class="nav-link text-body" href="#"><small class="fab fa-twitter"></small></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-body" href="#"><small class="fab fa-facebook-f"></small></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-body" href="#"><small class="fab fa-linkedin-in"></small></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-body" href="#"><small class="fab fa-instagram"></small></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-body" href="#"><small class="fab fa-google-plus-g"></small></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-body" href="#"><small class="fab fa-youtube"></small></a>
                     </li>
                 </ul>
             </nav>
@@ -51,7 +18,10 @@
             </a>
         </div>
         <div class="col-lg-8 text-center text-lg-right">
-            <a href="https://htmlcodex.com"><img class="img-fluid" src="{{ asset('/') }}img/ads-728x90.png" alt=""></a>
+            @foreach ($iklan as $data)
+            <a href="{{ $data->link_iklan }}" class="d-block w-100 text-white text-decoration-none mb-3"><img
+                    class="img-fluid" src="{{ url('gambar_iklan/'.$data->gambar_iklan) }}" alt=""></a>
+            @endforeach
         </div>
     </div>
 </div>
@@ -70,7 +40,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="{{ url('beranda') }}" class="nav-item nav-link active">Home</a>
                 <a href="category.html" class="nav-item nav-link">Category</a>
                 <a href="single.html" class="nav-item nav-link">Single News</a>
                 <div class="nav-item dropdown">

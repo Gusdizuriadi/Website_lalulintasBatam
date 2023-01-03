@@ -35,6 +35,9 @@ class FrontendController extends Controller
     public function detail($id_artikel)
     {
         $data = [
+            'iklan' => $this->ModelIklan->allData(),
+            'tag' => $this->ModelTag->allData(),
+            'kategori' => $this->ModelKategori->allData(),
             'artikel' => $this->ModelArtikel->detailData($id_artikel),
         ];
         return view('frontend.artikel.detail', $data);
