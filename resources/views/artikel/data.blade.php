@@ -60,8 +60,8 @@ Halaman Kelola Artikel
                             </tr>
                             <tr class="expandable-body">
                                 <td colspan="6">
-                                    <p style="text-align: justify">
-                                        <b>Isi Artikel :</b> {{ $data->deskripsi_artikel }}
+                                    <p>
+                                        <b>Isi Artikel :</b> {!!$data->deskripsi_artikel!!}
                                     </p>
                                 </td>
                             </tr>

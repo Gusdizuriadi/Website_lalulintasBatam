@@ -62,21 +62,18 @@ Detail Artikel
                 </nav>
                 <div class="tab-content p-3" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="product-desc" role="tabpanel"
-                        aria-labelledby="product-desc-tab" style="text-align: justify;">
-                        {{ $artikel->deskripsi_artikel }}
+                        aria-labelledby="product-desc-tab">
+                        {!!$artikel->deskripsi_artikel!!}
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <a href="{{ url('artikel') }}" class=" btn btn-sm btn-secondary"><i
-                            class="fas fa-arrow-circle-left"></i>
-                        Kembali</a>
-                </div>
             </div>
-            <!-- /.card-body -->
+            <div class="form-group">
+                <a href="{{ url('artikel') }}" class=" btn btn-sm btn-secondary"><i
+                        class="fas fa-arrow-circle-left"></i>
+                    Kembali</a>
+            </div>
         </div>
         <!-- /.card -->
-
 </section>
 
 @endsection

@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('judul')
-Tambah Profil
+Edit Profil
 @endsection
 
 @section('isi')
@@ -10,9 +10,9 @@ Tambah Profil
     @csrf
 
     <section class="content">
-        <div class="card card-primary">
+        <div class="card card-warning">
             <div class="card-header">
-                <h3 class="card-title">Tambah Data Profil</h3>
+                <h3 class="card-title">Edit Data Profil</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -89,7 +89,7 @@ Tambah Profil
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan</button>
+                    <button class="btn btn-warning btn-sm"><i class="fas fa-save"></i> Simpan</button>
                     <a href="{{ url('profil') }}" class=" btn btn-sm btn-secondary"><i class="fas fa-times-circle"></i>
                         Batal</a>
                 </div>

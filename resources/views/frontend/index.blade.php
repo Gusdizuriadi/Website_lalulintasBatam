@@ -150,14 +150,15 @@
         <div class="owl-carousel news-carousel carousel-item-4 position-relative">
             @foreach ($artikel as $data)
             <div class="position-relative overflow-hidden" style="height: 300px;">
-                <img class="img-fluid h-100" src="{{ url('gambar_artikel/'.$data->gambar_artikel) }}" style="object-fit: cover;">
+                <img class="img-fluid h-100" src="{{ url('gambar_artikel/'.$data->gambar_artikel) }}"
+                    style="object-fit: cover;">
                 <div class="overlay">
                     <div class="mb-2">
                         <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                             href="">{{ $data->nama_kategori }}</a>
                         <a class="text-white" href=""><small>{{ $data->tanggal_posting }}</small></a>
                     </div>
-                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">Lorem ipsum dolor sit
+                    <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="/frontend/artikel/detail/{{ $data->id_artikel }}">Lorem ipsum dolor sit
                         amet elit...</a>
                 </div>
             </div>
@@ -493,7 +494,9 @@
                         <h4 class="m-0 text-uppercase font-weight-bold">Iklan</h4>
                     </div>
                     <div class="bg-white text-center border border-top-0 p-3">
-                        <a href=""><img class="img-fluid" src="{{ asset('/') }}img/news-800x500-2.jpg" alt=""></a>
+                        @foreach ($iklan as $data)
+                        <a href="{{ $data->link_iklan }}"><img class="img-fluid" src="{{ url('gambar_iklan/'.$data->gambar_iklan) }}" alt=""></a>
+                        @endforeach
                     </div>
                 </div>
                 <!-- Ads End -->
@@ -598,16 +601,9 @@
                     </div>
                     <div class="bg-white border border-top-0 p-3">
                         <div class="d-flex flex-wrap m-n1">
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
-                            <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                            @foreach ($tag as $data)
+                            <a href="" class="btn btn-sm btn-outline-secondary m-1">{{ $data->nama_tag }}</a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

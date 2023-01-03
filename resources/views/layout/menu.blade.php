@@ -18,6 +18,16 @@
         </p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ url('tag') }}" class="nav-link">
+        <i class="nav-icon fas fa-tags"></i>
+        <p>
+            tag
+        </p>
+    </a>
+</li>
+
 <li class="nav-item">
     <a href="{{ url('jenis') }}" class="nav-link">
         <i class="nav-icon fas fa-car-crash"></i>
@@ -54,6 +64,26 @@
         </p>
     </a>
 </li>
+
+<li class="nav-header">IKLAN & BANNER</li>
+<li class="nav-item">
+    <a href="{{ url('iklan') }}" class="nav-link">
+        <i class="nav-icon fab fa-adversal"></i>
+        <p>
+            Iklan
+        </p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ url('') }}" class="nav-link">
+        <i class="nav-icon far fa-images"></i>
+        <p>
+            Slide Banner
+        </p>
+    </a>
+</li>
+
 @endif
 
 @if($user->level == 2)

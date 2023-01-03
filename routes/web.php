@@ -7,6 +7,8 @@ use App\Http\Controllers\Operator;
 use App\Http\Controllers\Beranda;
 use App\Http\Controllers\JenisController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\TagController;
+use App\Http\Controllers\IklanController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UserController;
@@ -28,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('beranda', [FrontendController::class, 'index'])->name('beranda');
+Route::get('/frontend/artikel/detail/{id_artikel}', [FrontendController::class, 'detail']);
 
 Route::get('/', [LayoutController::class, 'index'])->middleware('auth');
 Route::get('/home', [LayoutController::class, 'index'])->middleware('auth');
@@ -47,6 +50,20 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/kategori/update/{id_kategori}', [KategoriController::class, 'update']);
         Route::get('/kategori/delete/{id_kategori}', [KategoriController::class, 'delete']);
 
+        Route::get('tag', [TagController::class, 'index'])->name('tag');
+        Route::get('/tag/tambah', [TagController::class, 'add']);
+        Route::post('/tag/insert', [TagController::class, 'insert']);
+        Route::get('/tag/edit/{id_tag}', [TagController::class, 'edit']);
+        Route::post('/tag/update/{id_tag}', [TagController::class, 'update']);
+        Route::get('/tag/delete/{id_tag}', [TagController::class, 'delete']);
+
+        Route::get('iklan', [IklanController::class, 'index'])->name('iklan');
+        Route::get('/iklan/tambah', [IklanController::class, 'add']);
+        Route::post('/iklan/insert', [IklanController::class, 'insert']);
+        Route::get('/iklan/edit/{id_iklan}', [IklanController::class, 'edit']);
+        Route::post('/iklan/update/{id_iklan}', [IklanController::class, 'update']);
+        Route::get('/iklan/delete/{id_iklan}', [IklanController::class, 'delete']);
+
         Route::get('jenis', [JenisController::class, 'index'])->name('jenis');
         Route::get('/jenis/tambah', [JenisController::class, 'add']);
         Route::post('/jenis/insert', [JenisController::class, 'insert']);
@@ -61,7 +78,6 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/artikel/update/{id_artikel}', [ArtikelController::class, 'update']);
         Route::get('/artikel/detail/{id_artikel}', [ArtikelController::class, 'detail']);
         Route::get('/artikel/delete/{id_artikel}', [ArtikelController::class, 'delete']);
-
 
         Route::get('profil', [ProfilController::class, 'index'])->name('profil');
         Route::get('/profil/tambah', [ProfilController::class, 'add']);
