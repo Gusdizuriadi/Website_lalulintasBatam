@@ -20,16 +20,6 @@ Edit Iklan
                     <div class="col-sm-6">
                         <!-- text input -->
                         <div class="form-group">
-                            <label>link iklan</label>
-                            <textarea name="link_iklan" class="form-control @error('link_iklan') is-invalid @enderror"
-                                value="{{ $iklan->id_iklan }}">{{ $iklan->link_iklan }}</textarea>
-                            @error ('link_iklan')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <label>Nama iklan</label>
                             <input name="nama_iklan" class="form-control @error('nama_iklan') is-invalid @enderror"
                                 value="{{ $iklan->nama_iklan }}"></input>
@@ -41,11 +31,8 @@ Edit Iklan
                         </div>
                     </div>
 
-                </div>
-
-                <div class="row">
                     <div class="col-sm-6">
-                        <!-- textarea -->
+                        <!-- text input -->
                         <div class="form-group">
                             <label>Gambar iklan</label>
                             <input name="gambar_iklan" type="file"
@@ -57,9 +44,24 @@ Edit Iklan
                             </div>
                             @enderror
                         </div>
-
                         <div class="col-sm-12">
                             <img src="{{ url('gambar_iklan/'.$iklan->gambar_iklan) }}" width="365px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label>link iklan</label>
+                            <textarea name="link_iklan" class="form-control @error('link_iklan') is-invalid @enderror"
+                                value="{{ $iklan->id_iklan }}">{{ $iklan->link_iklan }}</textarea>
+                            @error ('link_iklan')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('judul')
-Halaman Kelola Artikel
+Halaman Kelola Berita
 @endsection
 
 @section('isi')
@@ -10,7 +10,7 @@ Halaman Kelola Artikel
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Data Artikel</h3>
+                    <h3 class="card-title">Data Berita</h3>
                 </div>
                 <!-- ./card-header -->
                 <div class="card-body">
@@ -29,11 +29,14 @@ Halaman Kelola Artikel
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Judul Artikel</th>
+                                <th>Judul Berita</th>
                                 <th>Date</th>
                                 <th>Kategori</th>
+                                <th>Jenis Berita</th>
+                                <th>Tags</th>
                                 <th>Jenis Pelanggaran</th>
                                 <th>Gambar</th>
+                                <th>Status</th>
                                 <th width="240px">Aksi</th>
                             </tr>
                         </thead>
@@ -45,8 +48,11 @@ Halaman Kelola Artikel
                                 <td>{{ $data->judul_artikel }}</td>
                                 <td>{{ $data->tanggal_posting }}</td>
                                 <td>{{ $data->nama_kategori }}</td>
+                                <td>{{ $data->nama_jenis_berita }}</td>
+                                <td>{{ $data->nama_tag}}</td>
                                 <td>{{ $data->nama_jenis }}</td>
                                 <td><img src="{{ url('gambar_artikel/'.$data->gambar_artikel) }}" width="150px"></td>
+                                <td><span class="badge {{ ($data->status == 1) ? 'badge-success' : 'badge-secondary' }}">{{ ($data->status == 1 ? 'Aktif' : 'Non-Aktif') }}</span></td>
                                 <td>
                                     <a href="/artikel/detail/{{ $data->id_artikel }}" class="btn btn-sm btn-info"><i
                                             class="fas fa-eye"></i> Detail</a>
@@ -59,9 +65,9 @@ Halaman Kelola Artikel
                                 </td>
                             </tr>
                             <tr class="expandable-body">
-                                <td colspan="6">
+                                <td colspan="9">
                                     <p>
-                                        <b>Isi Artikel :</b> {!!$data->deskripsi_artikel!!}
+                                        <b>Isi Berita :</b> {!!$data->deskripsi_artikel!!}
                                     </p>
                                 </td>
                             </tr>

@@ -107,7 +107,7 @@
                 <!-- Comment Form Start -->
                 <div class="mb-3">
                     <div class="section-title mb-0">
-                        <h4 class="m-0 text-uppercase font-weight-bold">Leave a comment</h4>
+                        <h4 class="m-0 text-uppercase font-weight-bold">Tinggalkan Komentar</h4>
                     </div>
                     <div class="bg-white border border-top-0 p-4">
                         <form>
@@ -125,17 +125,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="website">Website</label>
-                                <input type="url" class="form-control" id="website">
-                            </div>
 
                             <div class="form-group">
                                 <label for="message">Message *</label>
                                 <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
                             </div>
                             <div class="form-group mb-0">
-                                <input type="submit" value="Leave a comment"
+                                <input type="submit" value="Kirim"
                                     class="btn btn-primary font-weight-semi-bold py-2 px-3">
                             </div>
                         </form>

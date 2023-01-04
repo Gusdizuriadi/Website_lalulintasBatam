@@ -31,6 +31,20 @@ Edit Profil
                         </div>
 
                         <div class="form-group">
+                            <label>Visi & Misi</label>
+                            <textarea name="visi_misi" id="summernote"
+                                class="form-control @error('visi_misi') is-invalid @enderror"
+                                value="{{ $profil->id_profil }}">{{ $profil->visi_misi }}</textarea>
+                            @error ('visi_misi')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea name="deskripsi_profil"
                                 class="form-control @error('deskripsi_profil') is-invalid @enderror"
@@ -41,36 +55,6 @@ Edit Profil
                             </div>
                             @enderror
                         </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Visi</label>
-                            <textarea name="visi" type="text" class="form-control @error('visi') is-invalid @enderror"
-                                value="{{ $profil->id_profil }}">{{ $profil->visi }}</textarea>
-                            @error ('visi')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label>Misi</label>
-                            <textarea name="misi" type="text" class="form-control @error('misi') is-invalid @enderror"
-                                value="{{ $profil->id_profil }}">{{ $profil->misi }}</textarea>
-                            @error ('misi')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <!-- textarea -->
                         <div class="form-group">
                             <label>Gambar profil</label>
                             <input name="gambar_profil" type="file"
@@ -82,10 +66,18 @@ Edit Profil
                             </div>
                             @enderror
                         </div>
-
                         <div class="col-sm-12">
                             <img src="{{ url('gambar_profil/'.$profil->gambar_profil) }}" width="365px">
                         </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- textarea -->
+
+
+
                     </div>
                 </div>
                 <div class="form-group">

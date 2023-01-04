@@ -31,6 +31,20 @@ Tambah Profil
                         </div>
 
                         <div class="form-group">
+                            <label>Visi & Misi</label>
+                            <textarea name="visi_misi" id="summernote"
+                                class="form-control @error('visi_misi') is-invalid @enderror"
+                                value="{{ old('visi_misi') }}"></textarea>
+                            @error ('visi_misi')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
                             <label>Deskripsi</label>
                             <textarea name="deskripsi_profil"
                                 class="form-control @error('deskripsi_profil') is-invalid @enderror"
@@ -41,36 +55,7 @@ Tambah Profil
                             </div>
                             @enderror
                         </div>
-                    </div>
 
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label>Visi</label>
-                            <textarea name="visi" type="text" class="form-control @error('visi') is-invalid @enderror"
-                                value="{{ old('visi') }}"></textarea>
-                            @error ('visi')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label>Misi</label>
-                            <textarea name="misi" type="text" class="form-control @error('misi') is-invalid @enderror"
-                                value="{{ old('misi') }}"></textarea>
-                            @error ('misi')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <!-- textarea -->
                         <div class="form-group">
                             <label>Gambar profil</label>
                             <input name="gambar_profil" type="file"
@@ -84,6 +69,7 @@ Tambah Profil
                         </div>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <button class="btn btn-primary btn-sm"><i class="fas fa-save"></i> Simpan</button>
                     <a href="{{ url('profil') }}" class=" btn btn-sm btn-secondary"><i class="fas fa-times-circle"></i>

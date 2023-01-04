@@ -6,6 +6,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\Operator;
 use App\Http\Controllers\Beranda;
 use App\Http\Controllers\JenisController;
+use App\Http\Controllers\JenisBeritaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\IklanController;
@@ -56,6 +57,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/tag/edit/{id_tag}', [TagController::class, 'edit']);
         Route::post('/tag/update/{id_tag}', [TagController::class, 'update']);
         Route::get('/tag/delete/{id_tag}', [TagController::class, 'delete']);
+        
+        Route::get('jenisBerita', [JenisBeritaController::class, 'index'])->name('jenisBerita');
+        Route::get('/jenisBerita/tambah', [JenisBeritaController::class, 'add']);
+        Route::post('/jenisBerita/insert', [JenisBeritaController::class, 'insert']);
+        Route::get('/jenisBerita/edit/{id_jenisBerita}', [JenisBeritaController::class, 'edit']);
+        Route::post('/jenisBerita/update/{id_jenisBerita}', [JenisBeritaController::class, 'update']);
+        Route::get('/jenisBerita/delete/{id_jenisBerita}', [JenisBeritaController::class, 'delete']);
 
         Route::get('iklan', [IklanController::class, 'index'])->name('iklan');
         Route::get('/iklan/tambah', [IklanController::class, 'add']);
@@ -78,6 +86,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::post('/artikel/update/{id_artikel}', [ArtikelController::class, 'update']);
         Route::get('/artikel/detail/{id_artikel}', [ArtikelController::class, 'detail']);
         Route::get('/artikel/delete/{id_artikel}', [ArtikelController::class, 'delete']);
+        Route::get('/artikel/status/{id_artikel}', [ArtikelController::class, 'status']);
 
         Route::get('profil', [ProfilController::class, 'index'])->name('profil');
         Route::get('/profil/tambah', [ProfilController::class, 'add']);

@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('judul')
-Detail Artikel
+Detail Berita
 @endsection
 
 @section('isi')
@@ -57,7 +57,7 @@ Detail Artikel
                 <nav class="w-100">
                     <div class="nav nav-tabs" id="product-tab" role="tablist">
                         <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc"
-                            role="tab" aria-controls="product-desc" aria-selected="true">Isi Artikel</a>
+                            role="tab" aria-controls="product-desc" aria-selected="true">Isi Berita</a>
                     </div>
                 </nav>
                 <div class="tab-content p-3" id="nav-tabContent">

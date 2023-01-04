@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('judul')
-Tambah Artikel
+Tambah Berita
 @endsection
 
 @section('isi')
@@ -12,7 +12,7 @@ Tambah Artikel
     <section class="content">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Tambah Data Artikel</h3>
+                <h3 class="card-title">Tambah Data Berita</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -20,7 +20,7 @@ Tambah Artikel
                     <div class="col-sm-8">
                         <!-- text input -->
                         <div class="form-group">
-                            <label>Judul Artikel</label>
+                            <label>Judul Berita</label>
                             <textarea name="judul_artikel"
                                 class="form-control @error('judul_artikel') is-invalid @enderror"
                                 value="{{ old('judul_artikel') }}"></textarea>
@@ -51,7 +51,7 @@ Tambah Artikel
                     <div class="col-sm-8">
                         <!-- textarea -->
                         <div class="form-group">
-                            <label>Isi Artikel</label>
+                            <label>Isi Berita</label>
                             <textarea name="deskripsi_artikel" id="summernote"
                                 class="form-control @error('deskripsi_artikel') is-invalid @enderror"
                                 value="{{ old('deskripsi_artikel') }}"></textarea>
@@ -82,6 +82,38 @@ Tambah Artikel
                         </div>
 
                         <div class="form-group">
+                            <label>Tags</label>
+                            <select name="tag_id" class="form-control @error('tag_id') is-invalid @enderror"
+                                value="">
+                                <option value="">- Pilih -</option>
+                                @foreach ($tag as $item)
+                                <option value="{{ $item->id_tag }}" {{ old('tag_id') == $item->id_tag ? 'selected' : null }} >{{ $item->nama_tag }}</option>
+                                @endforeach
+                            </select>
+                            @error ('tag_id')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Jenis Berita</label>
+                            <select name="jenis_berita_id" class="form-control @error('jenis_berita_id') is-invalid @enderror"
+                                value="{{ old('jenis_berita_id') }}">
+                                <option value="">- Pilih -</option>
+                                @foreach ($jenisBerita as $item)
+                                <option value="{{ $item->id_jenis_berita }}" {{ old('jenis_berita_id') == $item->id_jenis_berita ? 'selected' : null }} >{{ $item->nama_jenis_berita }}</option>
+                                @endforeach
+                            </select>
+                            @error ('jenis_berita_id')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <label>Jenis Pelanggaran</label>
                             <select name="jenis_id" class="form-control @error('jenis_id') is-invalid @enderror"
                                 value="{{ old('jenis_id') }}">
@@ -98,7 +130,7 @@ Tambah Artikel
                         </div>
 
                         <div class="form-group">
-                            <label>Gambar Artikel</label>
+                            <label>Gambar Berita</label>
                             <input name="gambar_artikel" type="file"
                                 class="form-control @error('gambar_artikel') is-invalid @enderror"
                                 value="{{ old('gambar_artikel') }}">

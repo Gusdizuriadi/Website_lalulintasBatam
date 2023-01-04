@@ -17,12 +17,6 @@
                         class="text-secondary font-weight-normal">.com</span></h1>
             </a>
         </div>
-        <div class="col-lg-8 text-center text-lg-right">
-            @foreach ($iklan as $data)
-            <a href="{{ $data->link_iklan }}" class="d-block w-100 text-white text-decoration-none mb-3"><img
-                    class="img-fluid" src="{{ url('gambar_iklan/'.$data->gambar_iklan) }}" alt=""></a>
-            @endforeach
-        </div>
     </div>
 </div>
 <!-- Topbar End -->
@@ -40,9 +34,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="{{ url('beranda') }}" class="nav-item nav-link active">Home</a>
-                <a href="category.html" class="nav-item nav-link">Category</a>
-                <a href="single.html" class="nav-item nav-link">Single News</a>
+                <a href="{{ url('beranda') }}" class="nav-item nav-link active">Beranda</a>
+                <a href="#" class="nav-item nav-link">Profil</a>
+                <a href="category.html" class="nav-item nav-link">Jenis Pelanggaran</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kategori</a>
 
@@ -53,10 +47,10 @@
                     </div>
 
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.html" class="nav-item nav-link">Kontak</a>
             </div>
             <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
-                <input type="text" class="form-control border-0" placeholder="Keyword">
+                <input type="text" class="form-control border-0" placeholder="Pencarian Cepat">
                 <div class="input-group-append">
                     <button class="input-group-text bg-primary text-dark border-0 px-3"><i
                             class="fa fa-search"></i></button>

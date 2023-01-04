@@ -1,20 +1,19 @@
 @extends('layout.main')
 
 @section('judul')
-Halaman Kelola Profil
+Halaman Kelola Jenis Berita
 @endsection
 
 @section('isi')
-
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Data Profil</h3>
+            <h3 class="card-title">Data Jenis Berita</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-            <div class="pull-right mb-3">
-                <a href="{{ url('profil/tambah') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah
+            <div class="mb-3">
+                <a href="{{ url('jenisBerita/tambah') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i> Tambah
                     Data</a>
             </div>
             @if (session('pesan'))
@@ -27,29 +26,22 @@ Halaman Kelola Profil
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Nama Profil</th>
-                        <th>Deskripsi Profil</th>
-                        <th>Visi & Misi</th>
-                        <th>Gambar</th>
-                        <th width="250px">Aksi</th>
+                        <th style="width: 30px">No</th>
+                        <th>Nama Jenis Berita</th>
+                        <th width="160px">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php $no = 1; ?>
-                    @foreach ($profil as $data)
+                    @foreach ($jenisBerita as $data)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $data->nama_profil }}</td>
-                        <td style="text-align: justify;">{{ $data->deskripsi_profil }}</td>
-                        <td style="text-align: justify;">{!!$data->visi_misi!!}</td>
-                        <td> <img src="{{ url('gambar_profil/'.$data->gambar_profil) }}" width="150px"> </td>
+                        <td>{{ $data->nama_jenis_berita }}</td>
                         <td>
-                            <a href="/profil/detail/{{ $data->id_profil }}" class="btn btn-sm btn-info"><i
-                                    class="fas fa-eye"></i> Detail</a>
-                            <a href="/profil/edit/{{ $data->id_profil }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i> Edit</a>
+                            <a href="/jenisBerita/edit/{{ $data->id_jenis_berita }}" class="btn btn-sm btn-warning"><i
+                                    class="fas fa-edit"></i>Edit</a>
                             <button type="button" class="btn btn-sm btn-danger" data-toggle="modal"
-                                data-target="#delete{{ $data->id_profil }}"><i class=" fas fa-trash"></i>
+                                data-target="#delete{{ $data->id_jenis_berita }}"><i class="fas fa-trash"></i>
                                 Hapus
                             </button>
                         </td>
@@ -61,12 +53,12 @@ Halaman Kelola Profil
     </div>
 </div>
 
-@foreach ($profil as $data)
-<div class="modal fade" id="delete{{ $data->id_profil }}">
+@foreach ($jenisBerita as $data)
+<div class="modal fade" id="delete{{ $data->id_jenis_berita }}">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">{{ $data->nama_profil }}</h4>
+                <h4 class="modal-title">{{ $data->nama_jenis_berita }}</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -76,7 +68,7 @@ Halaman Kelola Profil
             </div>
             <div class="modal-footer justify-content-between">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Tidak</button>
-                <a href="/profil/delete/{{ $data->id_profil }}" class="btn btn-danger">Hapus</a>
+                <a href="/jenisBerita/delete/{{ $data->id_jenis_berita }}" class="btn btn-danger">Hapus</a>
             </div>
         </div>
         <!-- /.modal-content -->

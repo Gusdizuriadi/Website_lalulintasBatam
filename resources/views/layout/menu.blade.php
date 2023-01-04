@@ -23,7 +23,16 @@
     <a href="{{ url('tag') }}" class="nav-link">
         <i class="nav-icon fas fa-tags"></i>
         <p>
-            tag
+            Tags
+        </p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ url('jenisBerita') }}" class="nav-link">
+        <i class="nav-icon far fa-newspaper"></i>
+        <p>
+            Jenis Berita
         </p>
     </a>
 </li>
@@ -42,7 +51,7 @@
     <a href="{{ url('artikel') }}" class="nav-link">
         <i class="nav-icon fas fa-newspaper"></i>
         <p>
-            Artikel
+            Berita
         </p>
     </a>
 </li>

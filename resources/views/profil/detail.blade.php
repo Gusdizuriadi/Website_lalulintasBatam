@@ -39,15 +39,11 @@ Detail Profil
             <!-- About Me Box -->
             <div class="card card-primary card-outline col-md-6">
                 <div class="card-header">
-                    <h3 class="card-title">Visi & Misi</h3>
+                    <h3 class="fas fa-book mr-1"> Visi & Misi</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <strong><i class="fas fa-book mr-1"></i>Visi</strong>
-                    <p class="text-muted">{{ $profil->visi }}</p>
-                    <hr>
-                    <strong><i class="fas fa-book mr-1"></i> Misi</strong>
-                    <p class="text-muted"> {{ $profil->misi }}</p>
+                    <p class="text-muted">{!!$profil->visi_misi!!}</p>
                     <hr>
                 </div>
                 <!-- /.card-body -->

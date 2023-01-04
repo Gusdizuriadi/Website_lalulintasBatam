@@ -33,16 +33,16 @@ Tambah iklan
 
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label>Link</label>
-                            <textarea name="link_iklan" type="text" class="form-control @error('link_iklan') is-invalid @enderror"
-                                value="{{ old('link_iklan') }}"></textarea>
-                            @error ('link_iklan')
+                            <label>Gambar iklan</label>
+                            <input name="gambar_iklan" type="file"
+                                class="form-control @error('gambar_iklan') is-invalid @enderror"
+                                value="{{ old('gambar_iklan') }}">
+                            @error ('gambar_iklan')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
-
                     </div>
                 </div>
 
@@ -50,11 +50,11 @@ Tambah iklan
                     <div class="col-sm-6">
                         <!-- textarea -->
                         <div class="form-group">
-                            <label>Gambar iklan</label>
-                            <input name="gambar_iklan" type="file"
-                                class="form-control @error('gambar_iklan') is-invalid @enderror"
-                                value="{{ old('gambar_iklan') }}">
-                            @error ('gambar_iklan')
+                            <label>Link</label>
+                            <textarea name="link_iklan" type="text"
+                                class="form-control @error('link_iklan') is-invalid @enderror"
+                                value="{{ old('link_iklan') }}"></textarea>
+                            @error ('link_iklan')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

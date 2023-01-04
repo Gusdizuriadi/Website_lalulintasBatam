@@ -34,16 +34,14 @@ class ProfilController extends Controller
         Request()->validate([
             'nama_profil' => 'required|unique:tbl_profil,nama_profil|min:5',
             'deskripsi_profil' => 'required',
-            'visi' => 'required',
-            'misi' => 'required',
+            'visi_misi' => 'required',
             'gambar_profil' => 'required|mimes:jpg,jpeg,bmp,png',
         ], [
             'nama_profil.required' => 'Wajib Disii',
             'nama_profil.unique' => 'nama profil sudah ada !!!',
             'nama_profil.min' => 'Minimal 5 karakter !!!',
             'deskripsi_profil.required' => 'Wajib Disii',
-            'visi.required' => 'Wajib Disii',
-            'misi.required' => 'Wajib Disii',
+            'visi_misi.required' => 'Wajib Disii',
             'gambar_profil.required' => 'Wajib Disii',
         ]);
 
@@ -55,8 +53,7 @@ class ProfilController extends Controller
         $data = [
             'nama_profil' => Request()->nama_profil,
             'deskripsi_profil' => Request()->deskripsi_profil,
-            'visi' => Request()->visi,
-            'misi' => Request()->misi,
+            'visi_misi' => Request()->visi_misi,
             'gambar_profil' => $fileName,
         ];
 
@@ -90,15 +87,13 @@ class ProfilController extends Controller
         Request()->validate([
             'nama_profil' => 'required|min:5',
             'deskripsi_profil' => 'required',
-            'visi' => 'required',
-            'misi' => 'required',
+            'visi_misi' => 'required',
             'gambar_profil' => 'mimes:jpg,jpeg,bmp,png',
         ], [
             'nama_profil.required' => 'Wajib Disii',
             'nama_profil.min' => 'Minimal 5 karakter !!!',
             'deskripsi_profil.required' => 'Wajib Disii',
-            'visi.required' => 'Wajib Disii',
-            'misi.required' => 'Wajib Disii',
+            'visi_misi.required' => 'Wajib Disii',
         ]);
 
         if (Request()->gambar_profil <> "") {
@@ -110,8 +105,7 @@ class ProfilController extends Controller
             $data = [
                 'nama_profil' => Request()->nama_profil,
                 'deskripsi_profil' => Request()->deskripsi_profil,
-                'visi' => Request()->visi,
-                'misi' => Request()->misi,
+                'visi_misi' => Request()->visi_misi,
                 'gambar_profil' => $fileName,
         ];
 
@@ -122,8 +116,7 @@ class ProfilController extends Controller
             $data = [
                 'nama_profil' => Request()->nama_profil,
                 'deskripsi_profil' => Request()->deskripsi_profil,
-                'visi' => Request()->visi,
-                'misi' => Request()->misi,
+                'visi_misi' => Request()->visi_misi,
             ];
             
             $this->ModelProfil->editData($id_profil, $data);
