@@ -42,4 +42,14 @@ class FrontendController extends Controller
         ];
         return view('frontend.artikel.detail', $data);
     }
+    public function artikel_kategori($nama_kategori)
+    {
+        $data = [
+            'iklan' => $this->ModelIklan->allData(),
+            'tag' => $this->ModelTag->allData(),
+            'kategori' => $this->ModelKategori->allData(),
+            'artikel' => $this->ModelArtikel->show($nama_kategori),
+        ];
+        return view('frontend.artikel.artikel_kategori', $data);
+    }
 }

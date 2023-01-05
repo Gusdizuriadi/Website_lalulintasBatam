@@ -46,7 +46,7 @@ Halaman Kelola Berita
                             <tr data-widget="expandable-table" aria-expanded="false">
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $data->judul_artikel }}</td>
-                                <td>{{ $data->tanggal_posting }}</td>
+                                <td>{{ $data->created_at }}</td>
                                 <td>{{ $data->nama_kategori }}</td>
                                 <td>{{ $data->nama_jenis_berita }}</td>
                                 <td>{{ $data->nama_tag}}</td>

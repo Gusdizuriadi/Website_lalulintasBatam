@@ -52,7 +52,6 @@ class ArtikelController extends Controller
             'jenis_berita_id' => 'required',
             'jenis_id' => 'required',
             'deskripsi_artikel' => 'required',
-            'tanggal_posting' => 'required',
             'gambar_artikel' => 'required|mimes:jpg,jpeg,bmp,png',
         ], [
             'judul_artikel.required' => 'Wajib Disii',
@@ -63,7 +62,6 @@ class ArtikelController extends Controller
             'jenis_berita_id.required' => 'Wajib Disii',
             'jenis_id.required' => 'Wajib Disii',
             'deskripsi_artikel.required' => 'Wajib Disii',
-            'tanggal_posting.required' => 'Wajib Disii',
             'gambar_artikel.required' => 'Wajib Disii',
         ]);
 
@@ -79,7 +77,6 @@ class ArtikelController extends Controller
             'jenis_berita_id' => Request()->jenis_berita_id,
             'jenis_id' => Request()->jenis_id,
             'deskripsi_artikel' => Request()->deskripsi_artikel,
-            'tanggal_posting' => Request()->tanggal_posting,
             'gambar_artikel' => $fileName,
         ];
 
@@ -111,7 +108,6 @@ class ArtikelController extends Controller
             'jenis_berita_id' => 'required',
             'jenis_id' => 'required',
             'deskripsi_artikel' => 'required',
-            'tanggal_posting' => 'required',
             'gambar_artikel' => 'mimes:jpg,jpeg,bmp,png',
         ], [
             'judul_artikel.required' => 'Wajib Disii',
@@ -121,7 +117,6 @@ class ArtikelController extends Controller
             'jenis_berita_id.required' => 'Wajib Disii',
             'jenis_id.required' => 'Wajib Disii',
             'deskripsi_artikel.required' => 'Wajib Disii',
-            'tanggal_posting.required' => 'Wajib Disii',
         ]);
 
         if (Request()->gambar_artikel <> "") {
@@ -137,7 +132,6 @@ class ArtikelController extends Controller
                 'jenis_berita_id' => Request()->jenis_berita_id,
                 'jenis_id' => Request()->jenis_id,
                 'deskripsi_artikel' => Request()->deskripsi_artikel,
-                'tanggal_posting' => Request()->tanggal_posting,
                 'gambar_artikel' => $fileName,
                 'status' => Request()->status,
         ];
@@ -153,7 +147,6 @@ class ArtikelController extends Controller
                 'jenis_berita_id' => Request()->jenis_berita_id,
                 'jenis_id' => Request()->jenis_id,
                 'deskripsi_artikel' => Request()->deskripsi_artikel,
-                'tanggal_posting' => Request()->tanggal_posting,
                 'status' => Request()->status,
             ];
             

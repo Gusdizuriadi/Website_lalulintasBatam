@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('beranda', [FrontendController::class, 'index'])->name('beranda');
 Route::get('/frontend/artikel/detail/{id_artikel}', [FrontendController::class, 'detail']);
+Route::get('/frontend/artikel/artikel_kategori/{artikel}', [FrontendController::class, 'artikel_kategori']);
 
 Route::get('/', [LayoutController::class, 'index'])->middleware('auth');
 Route::get('/home', [LayoutController::class, 'index'])->middleware('auth');

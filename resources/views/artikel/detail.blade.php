@@ -20,7 +20,7 @@ Detail Berita
                 </div>
                 <div class="col-12 col-sm-6">
                     <h3 class="my-3">{{ $artikel->judul_artikel }}</h3>
-                    <span class="description"><i class="fas fa-calendar-alt"></i> {{ $artikel->tanggal_posting }}</span>
+                    <span class="description"><i class="fas fa-calendar-alt"></i> {{ \Carbon\Carbon::parse($artikel->created_at)->diffForHumans() }}</span>
                     <div class="mt-4">
                         <div class="btn btn-info btn-lg btn-flat">
                             <i class="fas fa-tags fa-lg mr-2"></i>

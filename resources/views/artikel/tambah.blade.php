@@ -34,11 +34,17 @@ Tambah Berita
 
                     <div class="col-sm-4">
                         <div class="form-group">
-                            <label>Tanggal Posting</label>
-                            <input name="tanggal_posting" type="date"
-                                class="form-control @error('tanggal_posting') is-invalid @enderror"
-                                value="{{ old('tanggal_posting') }}">
-                            @error ('tanggal_posting')
+                            <label>Kategori</label>
+                            <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
+                                value="">
+                                <option value="">- Pilih -</option>
+                                @foreach ($kategori as $item)
+                                <option value="{{ $item->id_kategori }}"
+                                    {{ old('kategori_id') == $item->id_kategori ? 'selected' : null }}>
+                                    {{ $item->nama_kategori }}</option>
+                                @endforeach
+                            </select>
+                            @error ('kategori_id')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -66,28 +72,13 @@ Tambah Berita
                     <div class="col-sm-4">
                         <!-- select -->
                         <div class="form-group">
-                            <label>Kategori</label>
-                            <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
-                                value="">
-                                <option value="">- Pilih -</option>
-                                @foreach ($kategori as $item)
-                                <option value="{{ $item->id_kategori }}" {{ old('kategori_id') == $item->id_kategori ? 'selected' : null }} >{{ $item->nama_kategori }}</option>
-                                @endforeach
-                            </select>
-                            @error ('kategori_id')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
                             <label>Tags</label>
-                            <select name="tag_id" class="form-control @error('tag_id') is-invalid @enderror"
-                                value="">
+                            <select name="tag_id" class="form-control @error('tag_id') is-invalid @enderror" value="">
                                 <option value="">- Pilih -</option>
                                 @foreach ($tag as $item)
-                                <option value="{{ $item->id_tag }}" {{ old('tag_id') == $item->id_tag ? 'selected' : null }} >{{ $item->nama_tag }}</option>
+                                <option value="{{ $item->id_tag }}"
+                                    {{ old('tag_id') == $item->id_tag ? 'selected' : null }}>{{ $item->nama_tag }}
+                                </option>
                                 @endforeach
                             </select>
                             @error ('tag_id')
@@ -99,11 +90,14 @@ Tambah Berita
 
                         <div class="form-group">
                             <label>Jenis Berita</label>
-                            <select name="jenis_berita_id" class="form-control @error('jenis_berita_id') is-invalid @enderror"
+                            <select name="jenis_berita_id"
+                                class="form-control @error('jenis_berita_id') is-invalid @enderror"
                                 value="{{ old('jenis_berita_id') }}">
                                 <option value="">- Pilih -</option>
                                 @foreach ($jenisBerita as $item)
-                                <option value="{{ $item->id_jenis_berita }}" {{ old('jenis_berita_id') == $item->id_jenis_berita ? 'selected' : null }} >{{ $item->nama_jenis_berita }}</option>
+                                <option value="{{ $item->id_jenis_berita }}"
+                                    {{ old('jenis_berita_id') == $item->id_jenis_berita ? 'selected' : null }}>
+                                    {{ $item->nama_jenis_berita }}</option>
                                 @endforeach
                             </select>
                             @error ('jenis_berita_id')
@@ -119,7 +113,9 @@ Tambah Berita
                                 value="{{ old('jenis_id') }}">
                                 <option value="">- Pilih -</option>
                                 @foreach ($jenis as $item)
-                                <option value="{{ $item->id_jenis }}" {{ old('jenis_id') == $item->id_jenis ? 'selected' : null }} >{{ $item->nama_jenis }}</option>
+                                <option value="{{ $item->id_jenis }}"
+                                    {{ old('jenis_id') == $item->id_jenis ? 'selected' : null }}>{{ $item->nama_jenis }}
+                                </option>
                                 @endforeach
                             </select>
                             @error ('jenis_id')

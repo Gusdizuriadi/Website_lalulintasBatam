@@ -41,7 +41,7 @@
                         <div class="mb-3">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                 href="">{{ $artikel->nama_kategori }}</a>
-                            <a class="text-body" href="">{{ $artikel->tanggal_posting }}</a>
+                            <a class="text-body" href="">{{ \Carbon\Carbon::parse($artikel->created_at)->diffForHumans() }}</a>
                         </div>
                         <h1 class="mb-3 text-secondary text-uppercase font-weight-bold">Lorem ipsum dolor sit amet elit
                             vitae porta diam...</h1>

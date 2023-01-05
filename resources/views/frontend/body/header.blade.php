@@ -42,7 +42,7 @@
 
                     <div class="dropdown-menu rounded-0 m-0">
                         @foreach ($kategori as $data)
-                        <a href="#" class="dropdown-item">{{ $data->nama_kategori }}</a>
+                        <a href="/frontend/artikel/artikel_kategori/{{$data->nama_kategori}}" class="dropdown-item">{{ $data->nama_kategori }}</a>
                         @endforeach
                     </div>
 
