@@ -90,6 +90,7 @@ Route::group(['middleware' => ['auth']], function () {
 
         Route::get('artikel', [ArtikelController::class, 'index'])->name('artikel');
         Route::get('/artikel/tambah', [ArtikelController::class, 'add']);
+        Route::get('/artikel/search', [ArtikelController::class, 'search']);
         Route::post('/artikel/insert', [ArtikelController::class, 'insert']);
         Route::get('/artikel/edit/{id_artikel}', [ArtikelController::class, 'edit']);
         Route::post('/artikel/update/{id_artikel}', [ArtikelController::class, 'update']);

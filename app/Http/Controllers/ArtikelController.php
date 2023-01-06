@@ -173,6 +173,16 @@ class ArtikelController extends Controller
         return redirect()->route('artikel')->with('pesan', 'Data Berhasil di Hapus');
     }
 
+    // public function search(Request $request)
+    // {
+    //     if ($request) {
+    //         $artikel = ModelArtikel::where('judul_artikel','LIKE','%'.$request->search.'%')->get();
+    //     }else {
+    //         $artikel = ModelArtikel::allData();
+    //     }
+    //     return view('artikel.data', $artikel);
+    // }
+
     //public function status($id_artikel)
     //{
     ///    $data = [

@@ -4,8 +4,8 @@
             <h4 class="m-0 text-uppercase font-weight-bold">Berita Populer</h4>
         </div>
         <div class="owl-carousel news-carousel carousel-item-4 position-relative">
-            
-            <div class="position-relative overflow-hidden" style="height: 300px;">
+
+            <div class="position-relative overflow-hidden" style="height: 350px;">
                 <img class="img-fluid h-100" src=""
                     style="object-fit: cover;">
                 <div class="overlay">
@@ -16,11 +16,10 @@
                             href=""><small></small></a>
                     </div>
                     <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold"
-                        href="">Lorem ipsum dolor sit
-                        amet elit...</a>
+                        href=""></a>
                 </div>
             </div>
-           
+            
         </div>
     </div>
 </div>

@@ -14,9 +14,18 @@ Halaman Kelola Berita
                 </div>
                 <!-- ./card-header -->
                 <div class="card-body">
-                    <div class="pull-right mb-3">
-                        <a href="{{ url('artikel/tambah') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>
-                            Tambah Data</a>
+                    <a href="{{ url('artikel/tambah') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus"></i>
+                        Tambah Data</a>
+                    <div id="" class="float-right mb-3">
+                        <div class="input-group" data-widget="sidebar-search">
+                            <input class="form-control form-control-sidebar" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-sidebar">
+                                    <i class="fas fa-search fa-fw"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     @if (session('pesan'))
                     <div class="alert alert-success alert-dismissible">
@@ -45,7 +54,7 @@ Halaman Kelola Berita
                             @foreach ($artikel as $key => $data)
                             <tr data-widget="expandable-table" aria-expanded="false">
                                 <td>{{ $artikel->firstItem() + $key }}</td>
-                                <td>{{ $data->judul_artikel }}</td>
+                                <td>{{ Str::limit($data->judul_artikel, '40', '...') }}</td>
                                 <td>{{ $data->created_at }}</td>
                                 <td>{{ $data->nama_kategori }}</td>
                                 <td>{{ $data->nama_jenis_berita }}</td>
@@ -76,15 +85,13 @@ Halaman Kelola Berita
                             @endforeach
                         </tbody>
                     </table>
-                    <div >
-                        Showing
-                        {{ $artikel->firstItem() }}
-                        to
-                        {{ $artikel->lastItem() }}
+                    <div>
+                        Showing {{ $artikel->firstItem() }} to {{ $artikel->lastItem() }} of {{ $artikel->total() }}
+                        entries
                     </div>
-                    <div class="float-right" >
-                        {{ $artikel->links() }}
-                    </div>
+                    <d class="float-right">
+                        {{ $artikel->links('pagination::bootstrap-4') }}
+                    </d>
                 </div>
                 <!-- /.card-body -->
             </div>
