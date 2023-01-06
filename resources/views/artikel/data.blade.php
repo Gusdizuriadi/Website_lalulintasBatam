@@ -42,9 +42,9 @@ Halaman Kelola Berita
                         </thead>
                         <tbody>
                             <?php $no = 1; ?>
-                            @foreach ($artikel as $data)
+                            @foreach ($artikel as $key => $data)
                             <tr data-widget="expandable-table" aria-expanded="false">
-                                <td>{{ $no++ }}</td>
+                                <td>{{ $artikel->firstItem() + $key }}</td>
                                 <td>{{ $data->judul_artikel }}</td>
                                 <td>{{ $data->created_at }}</td>
                                 <td>{{ $data->nama_kategori }}</td>
@@ -52,7 +52,9 @@ Halaman Kelola Berita
                                 <td>{{ $data->nama_tag}}</td>
                                 <td>{{ $data->nama_jenis }}</td>
                                 <td><img src="{{ url('gambar_artikel/'.$data->gambar_artikel) }}" width="150px"></td>
-                                <td><span class="badge {{ ($data->status == 1) ? 'badge-success' : 'badge-secondary' }}">{{ ($data->status == 1 ? 'Aktif' : 'Non-Aktif') }}</span></td>
+                                <td><span
+                                        class="badge {{ ($data->status == 1) ? 'badge-success' : 'badge-secondary' }}">{{ ($data->status == 1 ? 'Aktif' : 'Non-Aktif') }}</span>
+                                </td>
                                 <td>
                                     <a href="/artikel/detail/{{ $data->id_artikel }}" class="btn btn-sm btn-info"><i
                                             class="fas fa-eye"></i> Detail</a>
@@ -74,6 +76,15 @@ Halaman Kelola Berita
                             @endforeach
                         </tbody>
                     </table>
+                    <div >
+                        Showing
+                        {{ $artikel->firstItem() }}
+                        to
+                        {{ $artikel->lastItem() }}
+                    </div>
+                    <div class="float-right" >
+                        {{ $artikel->links() }}
+                    </div>
                 </div>
                 <!-- /.card-body -->
             </div>

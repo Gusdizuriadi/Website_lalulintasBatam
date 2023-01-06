@@ -34,7 +34,6 @@
     @include('frontend.slider.slider')
     <!-- Main News Slider End -->
 
-
     <!-- Breaking News Start -->
     @include('frontend.slider.sliderterkini')
     <!-- Breaking News End -->
@@ -43,33 +42,34 @@
     @include('frontend.slider.sliderpopuler')
     <!-- Featured News Slider End -->
 
-
     <!-- News With Sidebar Start -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="row">
-                @yield('main')
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row">
+                        @yield('main')
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-lg-4">
-                <!-- Social Follow Start -->
-                @include('frontend.body.sosialmedia')
-                <!-- Social Follow End -->
+                <div class="col-lg-4">
+                    <!-- Social Follow Start -->
+                    @include('frontend.body.sosialmedia')
+                    <!-- Social Follow End -->
 
-                <!-- Ads Start -->
-                @include('frontend.body.iklan')
-                <!-- Ads End -->
+                    <!-- Ads Start -->
+                    @include('frontend.body.iklan')
+                    <!-- Ads End -->
 
-                <!-- Popular News Start -->
-                @include('frontend.body.beritatrending')
-                <!-- Popular News End -->
+                    <!-- Popular News Start -->
+                    @include('frontend.body.beritatrending')
+                    <!-- Popular News End -->
 
-                <!-- Tags Start -->
-                @include('frontend.body.tag')
-                <!-- Tags End -->
-                </>
+                    <!-- Tags Start -->
+                    @include('frontend.body.tag')
+                    <!-- Tags End -->
+                    </>
+                </div>
             </div>
         </div>
     </div>

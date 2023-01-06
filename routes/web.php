@@ -10,6 +10,7 @@ use App\Http\Controllers\JenisBeritaController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\IklanController;
+use App\Http\Controllers\SosialMediaController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\UserController;
@@ -72,6 +73,13 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get('/iklan/edit/{id_iklan}', [IklanController::class, 'edit']);
         Route::post('/iklan/update/{id_iklan}', [IklanController::class, 'update']);
         Route::get('/iklan/delete/{id_iklan}', [IklanController::class, 'delete']);
+
+        Route::get('sosialMedia', [SosialMediaController::class, 'index'])->name('sosialMedia');
+        Route::get('/sosialMedia/tambah', [SosialMediaController::class, 'add']);
+        Route::post('/sosialMedia/insert', [SosialMediaController::class, 'insert']);
+        Route::get('/sosialMedia/edit/{id_sosialMedia}', [SosialMediaController::class, 'edit']);
+        Route::post('/sosialMedia/update/{id_sosialmedia}', [SosialMediaController::class, 'update']);
+        Route::get('/sosialMedia/delete/{id_sosialmedia}', [SosialMediaController::class, 'delete']);
 
         Route::get('jenis', [JenisController::class, 'index'])->name('jenis');
         Route::get('/jenis/tambah', [JenisController::class, 'add']);

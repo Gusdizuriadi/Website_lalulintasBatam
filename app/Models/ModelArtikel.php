@@ -16,7 +16,7 @@ class ModelArtikel extends Model
         ->leftJoin('tbl_tag', 'tbl_tag.id_tag', '=', 'tbl_artikel.tag_id')
         ->leftJoin('tbl_jenis_berita', 'tbl_jenis_berita.id_jenis_berita', '=', 'tbl_artikel.jenis_berita_id')
         ->orderByRaw('created_at DESC')
-        ->get();
+        ->simplePaginate(5);
     } 
 
     public function detailData($id_artikel)

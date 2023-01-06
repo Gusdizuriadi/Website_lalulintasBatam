@@ -8,6 +8,7 @@ use App\Models\ModelProfil;
 use App\Models\ModelTag;
 use App\Models\ModelIklan;
 use App\Models\ModelArtikel;
+use App\Models\ModelSosmed;
 
 class FrontendController extends Controller
 {
@@ -18,6 +19,7 @@ class FrontendController extends Controller
         $this->ModelProfil = new ModelProfil();
         $this->ModelTag = new ModelTag();
         $this->ModelIklan = new ModelIklan();
+        $this->ModelSosmed = new ModelSosmed();
     }
 
     public function index()
@@ -26,6 +28,7 @@ class FrontendController extends Controller
             'profil' => $this->ModelProfil->allData(),
             'tag' => $this->ModelTag->allData(),
             'iklan' => $this->ModelIklan->allData(),
+            'sosialMedia' => $this->ModelSosmed->allData(),
             'kategori' => $this->ModelKategori->allData(),
             'artikel' => $this->ModelArtikel->allData(),
         ];
@@ -37,6 +40,7 @@ class FrontendController extends Controller
         $data = [
             'iklan' => $this->ModelIklan->allData(),
             'tag' => $this->ModelTag->allData(),
+            'sosialMedia' => $this->ModelSosmed->allData(),
             'kategori' => $this->ModelKategori->allData(),
             'artikel' => $this->ModelArtikel->detailData($id_artikel),
         ];
@@ -47,6 +51,7 @@ class FrontendController extends Controller
         $data = [
             'iklan' => $this->ModelIklan->allData(),
             'tag' => $this->ModelTag->allData(),
+            'sosialMedia' => $this->ModelSosmed->allData(),
             'kategori' => $this->ModelKategori->allData(),
             'artikel' => $this->ModelArtikel->show($nama_kategori),
         ];

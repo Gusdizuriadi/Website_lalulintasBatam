@@ -74,12 +74,21 @@
     </a>
 </li>
 
-<li class="nav-header">IKLAN & BANNER</li>
+<li class="nav-header">SETTING</li>
 <li class="nav-item">
     <a href="{{ url('iklan') }}" class="nav-link">
         <i class="nav-icon fab fa-adversal"></i>
         <p>
             Iklan
+        </p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ url('sosialMedia') }}" class="nav-link">
+        <i class="nav-icon fas fa-globe-asia"></i>
+        <p>
+            Sosial Media
         </p>
     </a>
 </li>

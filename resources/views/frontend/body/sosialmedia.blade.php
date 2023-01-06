@@ -2,18 +2,14 @@
     <div class="section-title mb-0">
         <h4 class="m-0 text-uppercase font-weight-bold">Ikuti Kami</h4>
     </div>
+
     <div class="bg-white border border-top-0 p-3">
-        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #39569E;">
-            <i class="fab fa-facebook-f text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-            <span class="font-weight-medium">12,345 Fans</span>
+        @foreach ($sosialMedia as $data)
+        <a href="{{ $data->link_sosmed }}" class="d-block w-100 text-white text-decoration-none mb-3"
+            style="background: #20B2AA;">
+            <i class="fas fa-globe-asia text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
+            <span class="font-weight-medium">{{ $data->nama_sosmed }}</span>
         </a>
-        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #C8359D;">
-            <i class="fab fa-instagram text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-            <span class="font-weight-medium">12,345 Followers</span>
-        </a>
-        <a href="" class="d-block w-100 text-white text-decoration-none mb-3" style="background: #DC472E;">
-            <i class="fab fa-youtube text-center py-4 mr-3" style="width: 65px; background: rgba(0, 0, 0, .2);"></i>
-            <span class="font-weight-medium">12,345 Subscribers</span>
-        </a>
+        @endforeach
     </div>
 </div>
