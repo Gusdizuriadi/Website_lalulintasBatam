@@ -42,10 +42,12 @@ class FrontendController extends Controller
             'tag' => $this->ModelTag->allData(),
             'sosialMedia' => $this->ModelSosmed->allData(),
             'kategori' => $this->ModelKategori->allData(),
+            'artikel' => $this->ModelArtikel->viewsData($id_artikel),
             'artikel' => $this->ModelArtikel->detailData($id_artikel),
         ];
         return view('frontend.artikel.detail', $data);
     }
+    
     public function artikel_kategori($nama_kategori)
     {
         $data = [

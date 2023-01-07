@@ -46,6 +46,7 @@ Halaman Kelola Berita
                                 <th>Jenis Pelanggaran</th>
                                 <th>Gambar</th>
                                 <th>Status</th>
+                                <th width="100px">Views</th>
                                 <th width="240px">Aksi</th>
                             </tr>
                         </thead>
@@ -64,6 +65,7 @@ Halaman Kelola Berita
                                 <td><span
                                         class="badge {{ ($data->status == 1) ? 'badge-success' : 'badge-secondary' }}">{{ ($data->status == 1 ? 'Aktif' : 'Non-Aktif') }}</span>
                                 </td>
+                                <td><span><i class="far fa-eye mr-2"></i></span>{{ $data->views }}</td>
                                 <td>
                                     <a href="/artikel/detail/{{ $data->id_artikel }}" class="btn btn-sm btn-info"><i
                                             class="fas fa-eye"></i> Detail</a>

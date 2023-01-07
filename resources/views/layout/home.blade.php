@@ -114,4 +114,52 @@ Halaman Dashboard
     </div>
     <!-- /.col -->
 </div>
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Berita Populer</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+            <div class="row">
+                <div class="col-sm-12 col-md-6"></div>
+                <div class="col-sm-12 col-md-6"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline"
+                        aria-describedby="example2_info">
+                        <thead>
+                            <tr>
+                                <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
+                                    colspan="1" aria-sort="ascending"
+                                    aria-label="Rendering engine: activate to sort column descending">No
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-label="Browser: activate to sort column ascending">Nama Berita</th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-label="Platform(s): activate to sort column ascending">Views</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php $no = 1; ?>
+                            @if($populer_artikel)
+                            @foreach($populer_artikel as $data)
+                            <tr class="odd">
+                                <td class="dtr-control sorting_1" tabindex="0">{{ $no++ }}</td>
+                                <td>{{ Str::limit($data->judul_artikel, '100', '...') }}</td>
+                                <td><span><i class="far fa-eye mr-2"></i></span>{{ $data->views }} x dilihat</td>
+                            </tr>
+                            @endforeach
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.card-body -->
+</div>
 @endsection
