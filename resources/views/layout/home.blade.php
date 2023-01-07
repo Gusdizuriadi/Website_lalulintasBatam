@@ -32,7 +32,7 @@ Halaman Dashboard
     </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-info">
             <span class="info-box-icon"><i class="far fa-bookmark"></i></span>
@@ -48,11 +48,9 @@ Halaman Dashboard
                     70% Increase in 30 Days
                 </span>
             </div>
-            <!-- /.info-box-content -->
         </div>
-        <!-- /.info-box -->
     </div>
-    <!-- /.col -->
+
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-success">
             <span class="info-box-icon"><i class="far fa-thumbs-up"></i></span>
@@ -68,11 +66,9 @@ Halaman Dashboard
                     70% Increase in 30 Days
                 </span>
             </div>
-            <!-- /.info-box-content -->
         </div>
-        <!-- /.info-box -->
     </div>
-    <!-- /.col -->
+
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-warning">
             <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
@@ -88,11 +84,9 @@ Halaman Dashboard
                     70% Increase in 30 Days
                 </span>
             </div>
-            <!-- /.info-box-content -->
         </div>
-        <!-- /.info-box -->
     </div>
-    <!-- /.col -->
+
     <div class="col-md-3 col-sm-6 col-12">
         <div class="info-box bg-danger">
             <span class="info-box-icon"><i class="fas fa-comments"></i></span>
@@ -108,12 +102,9 @@ Halaman Dashboard
                     70% Increase in 30 Days
                 </span>
             </div>
-            <!-- /.info-box-content -->
         </div>
-        <!-- /.info-box -->
     </div>
-    <!-- /.col -->
-</div>
+</div> -->
 
 
 <div class="card">
