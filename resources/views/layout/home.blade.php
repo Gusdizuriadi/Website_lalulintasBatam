@@ -139,6 +139,8 @@ Halaman Dashboard
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="Browser: activate to sort column ascending">Nama Berita</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+                                    aria-label="Browser: activate to sort column ascending">Gambar</th>
                                 <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                     aria-label="Platform(s): activate to sort column ascending">Views</th>
                             </tr>
@@ -148,8 +150,9 @@ Halaman Dashboard
                             @if($populer_artikel)
                             @foreach($populer_artikel as $data)
                             <tr class="odd">
-                                <td class="dtr-control sorting_1" tabindex="0">{{ $no++ }}</td>
+                                <td>{{ $no++ }}</td>
                                 <td>{{ Str::limit($data->judul_artikel, '100', '...') }}</td>
+                                <td><img src="{{ url('gambar_artikel/'.$data->gambar_artikel) }}" width="150px"></td>
                                 <td><span><i class="far fa-eye mr-2"></i></span>{{ $data->views }} x dilihat</td>
                             </tr>
                             @endforeach
