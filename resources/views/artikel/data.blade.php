@@ -78,7 +78,7 @@ Halaman Kelola Berita
                                 </td>
                             </tr>
                             <tr class="expandable-body">
-                                <td colspan="9">
+                                <td colspan="10">
                                     <p>
                                         <b>Isi Berita :</b> {!!$data->deskripsi_artikel!!}
                                     </p>

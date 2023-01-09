@@ -34,7 +34,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="{{ url('beranda') }}" class="nav-item nav-link active">Beranda</a>
+                <a href="{{ url('beranda') }}" class="nav-item nav-link {{ request()->is('beranda') ? 'active' : '' }}">Beranda</a>
                 <a href="#" class="nav-item nav-link">Profil</a>
                 <a href="category.html" class="nav-item nav-link">Jenis Pelanggaran</a>
                 <div class="nav-item dropdown">
