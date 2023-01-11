@@ -41,7 +41,7 @@
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kategori</a>
                     <div class="dropdown-menu rounded-0 m-0">
                         @foreach ($kategori as $data)
-                        <a href="/frontend/artikel/artikel_kategori/{{$data->nama_kategori}}" class="dropdown-item">{{ $data->nama_kategori }}</a>
+                        <a href="/frontend/artikel/artikel_kategori/{{$data->id_kategori}}" class="dropdown-item">{{ $data->nama_kategori }}</a>
                         @endforeach
                     </div>
                 </div>

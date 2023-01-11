@@ -1,14 +1,6 @@
 @extends('frontend.main')
 @section('main')
 
-
-<div class="col-lg-12 mb-3">
-    @foreach ($iklan as $data)
-    <a href="{{ $data->link_iklan }}" class="d-block w-100 text-white text-decoration-none mb-3"><img
-            class="img-fluid w-100" src="{{ url('gambar_iklan/'.$data->gambar_iklan) }}" alt=""></a>
-    @endforeach
-</div>
-
 <!-- News Detail Start -->
 <div class="position-relative mb-3">
     <img class="img-fluid w-100" src="{{ url('gambar_artikel/'.$artikel->gambar_artikel) }}" style="object-fit: cover;">
@@ -33,6 +25,13 @@
     </div>
 </div>
 <!-- News Detail End -->
+
+<div class="col-lg-12 mb-3">
+    @foreach ($iklan as $data)
+    <a href="{{ $data->link_iklan }}" class="d-block w-100 text-white text-decoration-none mb-3"><img
+            class="img-fluid w-100" src="{{ url('gambar_iklan/'.$data->gambar_iklan) }}" alt=""></a>
+    @endforeach
+</div>
 
 <!-- Comment List Start -->
 <div class="mb-3">
