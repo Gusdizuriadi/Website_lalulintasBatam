@@ -5,7 +5,7 @@
     <div class="bg-white border border-top-0 p-3">
         <div class="d-flex flex-wrap m-n1">
             @foreach ($tag as $data)
-            <a href="" class="btn btn-sm btn-outline-secondary m-1">{{ $data->nama_tag }}</a>
+            <a href="/frontend/artikel/artikel_tag/{{$data->id_tag}}" class="btn btn-sm btn-outline-secondary m-1">{{ $data->nama_tag }}</a>
             @endforeach
         </div>
     </div>

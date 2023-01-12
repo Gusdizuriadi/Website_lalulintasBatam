@@ -49,7 +49,7 @@
         <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
             <div class="mb-2">
                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2"
-                    href="/frontend/artikel/artikel_kategori/{{$data->nama_kategori}}">{{ $data->nama_kategori }}</a>
+                    href="/frontend/artikel/artikel_kategori/{{$data->id_kategori}}">{{ $data->nama_kategori }}</a>
                 <a class="text-body"
                     href=""><small>{{ \Carbon\Carbon::parse($data->created_at)->diffForHumans() }}</small></a>
             </div>

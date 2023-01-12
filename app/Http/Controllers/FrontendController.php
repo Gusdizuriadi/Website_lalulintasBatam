@@ -59,4 +59,16 @@ class FrontendController extends Controller
         ];
         return view('frontend.artikel.artikel_kategori', $data);
     }
+
+    public function artikel_tag($tag_id)
+    {
+        $data = [
+            'iklan' => $this->ModelIklan->allData(),
+            'tag' => $this->ModelTag->allData(),
+            'sosialMedia' => $this->ModelSosmed->allData(),
+            'kategori' => $this->ModelKategori->allData(),
+            'artikel' => $this->ModelArtikel->artikel_tag($tag_id),
+        ];
+        return view('frontend.artikel.artikel_tag', $data);
+    }
 }

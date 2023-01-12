@@ -39,7 +39,7 @@
     <!-- Breaking News End -->
 
     <!-- Featured News Slider Start -->
-    @include('frontend.slider.sliderpopuler')
+    @include('frontend.slider.slidertrending')
     <!-- Featured News Slider End -->
 
     <!-- News With Sidebar Start -->
@@ -62,7 +62,7 @@
                     <!-- Ads End -->
 
                     <!-- Popular News Start -->
-                    @include('frontend.body.beritatrending')
+                    @include('frontend.body.beritapopuler')
                     <!-- Popular News End -->
 
                     <!-- Tags Start -->
